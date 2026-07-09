@@ -1,0 +1,4037 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- [BACKEND] 페이지 title 동적 교체: site_name, season_name -->
+  <title>크래프트박스 리그: PUBG | 2026 S3~6 배그 썸머 챌린지</title>
+  <meta name="description" content="2주마다 새롭게 펼쳐지는 썸머 랭킹 경쟁!" />
+
+  <!-- [BACKEND] SNS 공유용 메타태그 (Open Graph + Twitter Card)
+       아래 3개 값만 배포 시 교체하세요:
+       - og:url / twitter:url : 배포 도메인(절대 URL)
+       - og:image / twitter:image : 공유 썸네일(절대 URL, 권장 1200x630)
+       - og:site_name : 필요 시 수정 -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="크래프트박스 리그" />
+  <meta property="og:title" content="크래프트박스 리그: PUBG | 2026 S3~6 배그 썸머 챌린지" />
+  <meta property="og:description" content="2주마다 새롭게 펼쳐지는 썸머 랭킹 경쟁!" />
+  <meta property="og:url" content="https://ics.mediaweb.co.kr/_event/20260715_CBL_PUBGS3-6/index.html" />
+  <meta property="og:image" content="https://ics.mediaweb.co.kr/_event/20260715_CBL_PUBGS3-6/img/Thumbnail.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="크래프트박스 리그 PUBG 2026 S3~6" />
+  <meta property="og:locale" content="ko_KR" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="크래프트박스 리그: PUBG | 2026 S3~6 배그 썸머 챌린지" />
+  <meta name="twitter:description" content="크래프트박스 리그: PUBG | 2026 S3~6 배그 썸머 챌린지" />
+  <meta name="twitter:url" content="https://ics.mediaweb.co.kr/_event/20260715_CBL_PUBGS3-6/index.html" />
+  <meta name="twitter:image" content="https://ics.mediaweb.co.kr/_event/20260715_CBL_PUBGS3-6/img/Thumbnail.jpg" />
+
+  <!-- [BACKEND] Kakao JavaScript SDK (카카오톡 공유용)
+       https://developers.kakao.com 에서 앱 등록 후 발급받은 "JavaScript 키"를
+       하단 SHARE_CONFIG.kakaoKey 값에 교체하세요. 키 미설정 시 카카오톡 버튼은
+       URL 복사 폴백으로 자동 동작합니다. -->
+  <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.4/kakao.min.js" crossorigin="anonymous"></script>
+
+  <!-- 폰트: 격동고딕 HV (타이틀/헤드라인용) -->
+  <link rel="preconnect" href="https://o6cdhdutve.execute-api.ap-northeast-2.amazonaws.com">
+  <link rel="stylesheet" href="https://o6cdhdutve.execute-api.ap-northeast-2.amazonaws.com/v1/api/css/drop_fontstream_css/?sid=gAAAAABp4Z8MYRuI0O1Qsfcxwk7Mz6Sdp4un1frUBl8YRPrOn1YsHqTMdWWkAdJfT0N7F-eufXFxVd6rUSH2srnMRVLoWwknCAat2nneFvudSYCjieHsbtFm792Vz6adp2epO7Mxh9us6hnGYN5IKXJ0ih4UE7EZouEHKsT2h6qVt8G85OoyfXvgxNnPU5dxQ32eyzN7TAHOb-dKGZD4-KuynGA670LPus21dhc-JLq-QVbnU33hVC_a39L-aHkDoKRx89hST_AT" charset="utf-8" referrerpolicy="origin">
+  <!-- 폰트: Pretendard (본문/UI용) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+  <style>
+    /* ============================================================
+     * QA CHECKLIST
+     * ✅ max-width: 1196px — 2560px 해상도에서 콘텐츠 퍼짐 방지
+     * ✅ 버튼 min-height: 44px — 모바일 375px 터치 영역 보장
+     * ✅ -webkit-overflow-scrolling: touch — iOS 스크롤 개선
+     * ✅ position: sticky — Safari -webkit-sticky 병행 선언
+     * ✅ linear-gradient — 크로스브라우저 지원
+     * ✅ aspect-ratio + padding-top 폴백 — Safari 구버전 대응
+     * ✅ clip-path — -webkit-clip-path prefix 병행
+     * ✅ gap — Safari 14 이하 fallback margin 처리
+     * ✅ scroll-behavior: smooth — 앵커 스크롤
+     * ✅ will-change: transform — 애니메이션 GPU 가속
+     * ============================================================ */
+
+    /* ── 폰트: Giants (그랜드 프라이즈 금액 강조용) ── */
+    @font-face {
+      font-family: 'Giants';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/Giants-Regular.woff2') format('woff2');
+      font-weight: 400;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Giants';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/Giants-Bold.woff2') format('woff2');
+      font-weight: 700;
+      font-display: swap;
+    }
+
+    /* ── 리셋 & 기본 ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Pretendard', -apple-system, 'Apple SD Gothic Neo', sans-serif;
+      background: #050307;
+      color: #fff;
+      overflow-x: hidden;
+      word-break: keep-all;
+    }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+    ul, ol { list-style: none; }
+
+    /* ── CSS 변수 ── */
+    :root {
+      --c-bg-dark:    #050307;
+      --c-bg-darker:  #090909;
+      --c-bg-mid:     #121212;
+      --c-bg-gray:    #b5b7be;
+      --c-bg-light:   #d7dce3;
+      --c-blue:       #0957ff;
+      --c-blue-dark:  #1726ce;
+      --c-gold:       #ffae00;
+      --c-gold-bright:#fcb800;
+      --c-white:      #ffffff;
+      --c-red:        #ff0606;
+      --c-orange:     #ff990a;
+      --c-text-sub:   #c9c9c9;
+      --c-text-muted: #9d9d9d;
+      --container:    1196px;
+      --header-h:     60px;
+    }
+
+    /* ── 공통 컨테이너 ── */
+    .container {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      justify-content: center;
+      font-family: '격동고딕', sans-serif;
+      font-size: 16px;
+      color: #fff;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+    .section-label::before,
+    .section-label::after {
+      content: '';
+      display: inline-block;
+      width: 40px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    /* ════════════════════════════════════════
+       HEADER
+    ════════════════════════════════════════ */
+    .cb-header {
+      position: sticky;
+      position: -webkit-sticky;
+      top: 0;
+      z-index: 1000;
+      width: 100%;
+      height: var(--header-h);
+      background: linear-gradient(90deg, #000 0%, #060712 100%);
+      box-shadow: inset 0px -1px 0px rgba(255,255,255,0.13);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .cb-header__inner {
+      max-width: 1440px;
+      width: 100%;
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 48px;
+    }
+    .cb-header__notice-wrap {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    /* PC방 토글 */
+    .toggle-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 112px;
+      height: 44px;
+      padding: 0;
+      border: none;
+      background: none;
+      cursor: pointer;
+      flex-shrink: 0;
+      position: relative;
+    }
+    .toggle-btn__img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    /* 공지 텍스트 */
+    .cb-header__notice {
+      font-size: clamp(14px, 1.25vw, 18px);
+      color: #fff;
+      line-height: 1.5;
+      white-space: nowrap;
+    }
+    .cb-header__notice u { text-decoration: underline; }
+    .cb-header__notice b { font-weight: 700; }
+    .cb-header__notice a { color: #469CFF; text-decoration: none; }
+    .cb-header__notice a:hover u { opacity: 0.8; }
+    /* 공유하기 버튼 */
+    .btn-share {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: #fff;
+      border: none;
+      border-radius: 50px;
+      padding: 10px 16px;
+      height: 38px;
+      cursor: pointer;
+      white-space: nowrap;
+      min-height: 30px;
+      transition: opacity 0.2s;
+      box-sizing: border-box;
+      min-width: 0;
+      flex-shrink: 0;
+    }
+    .btn-share:hover { opacity: 0.85; }
+    .btn-share img {
+      width: 20px;
+      height: 20px;
+      flex: 0 0 auto;
+    }
+    .btn-share span {
+      font-family: 'Pretendard', sans-serif;
+      display: block;
+      min-width: 0;
+      font-size: clamp(14px, 1.1vw, 16px);
+      font-weight: 800;
+      color: #000;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      padding: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .mobile-fab {
+      display: none;
+      position: fixed;
+      right: 16px;
+      bottom: 20px;
+      z-index: 1800;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .mobile-fab__btn {
+      width: 52px;
+      height: 52px;
+      border: none;
+      border-radius: 50%;
+      background: #fff;
+      color: #111;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.28);
+      cursor: pointer;
+      padding: 0;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+    .mobile-fab__btn img {
+      display: block;
+      width: 24px;
+      height: 24px;
+    
+      filter: none;
+    }
+    .mobile-fab__btn--top {
+      font-family: 'Pretendard', sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+    .copy-toast {
+      position: fixed;
+      left: 50%;
+      top: calc(var(--header-h) + 12px);
+      transform: translate(-50%, 12px);
+      background: #fff;
+      color: #111;
+      font-family: 'Pretendard', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.4;
+      padding: 14px 22px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+      opacity: 0;
+      pointer-events: none;
+      z-index: 2000;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      white-space: nowrap;
+    }
+    .copy-toast.is-visible {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+
+    /* ── 공유하기 모달 ── */
+    .share-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 2100;
+      padding: 20px;
+    }
+    .share-modal.is-open { display: flex; }
+    .share-modal__dialog {
+      background: #fff;
+      border-radius: 20px;
+      padding: 32px 24px 28px;
+      width: 100%;
+      max-width: 420px;
+      position: relative;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      animation: shareModalIn 0.18s ease-out;
+    }
+    @keyframes shareModalIn {
+      from { transform: translateY(12px); opacity: 0; }
+      to   { transform: translateY(0);     opacity: 1; }
+    }
+    .share-modal__title {
+      font-family: 'Pretendard', sans-serif;
+      color: #111;
+      font-size: 20px;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+    .share-modal__close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 36px;
+      height: 36px;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      font-size: 26px;
+      color: #555;
+      line-height: 1;
+      border-radius: 50%;
+      transition: background 0.15s;
+    }
+    .share-modal__close:hover { background: #f0f0f0; }
+    .share-modal__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .share-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 4px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      border-radius: 12px;
+      transition: background 0.15s;
+      min-height: 44px;
+    }
+    .share-item:hover { background: #f5f5f7; }
+    .share-item__icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+    }
+    .share-item__icon svg { width: 28px; height: 28px; display: block; }
+    .share-item--kakao     .share-item__icon { background: #FEE500; color: #181600; }
+    .share-item--facebook  .share-item__icon { background: #1877F2; }
+    .share-item--twitter   .share-item__icon { background: #000; }
+    .share-item--naver     .share-item__icon { background: #03C75A; }
+    .share-item--instagram .share-item__icon {
+      background: linear-gradient(135deg, #feda75 0%, #fa7e1e 25%, #d62976 50%, #962fbf 75%, #4f5bd5 100%);
+    }
+    .share-item--copy      .share-item__icon { background: #2c2c32; }
+    .share-item__label {
+      font-family: 'Pretendard', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: #333;
+      letter-spacing: -0.02em;
+      white-space: nowrap;
+    }
+    @media (max-width: 480px) {
+      .share-modal__dialog { padding: 28px 18px 22px; }
+      .share-modal__grid { gap: 8px; }
+      .share-item__icon { width: 52px; height: 52px; }
+      .share-item__icon svg { width: 26px; height: 26px; }
+      .share-item__label { font-size: 12px; }
+    }
+
+    /* ════════════════════════════════════════
+       KV SECTION
+    ════════════════════════════════════════ */
+    .kv-section {
+      position: relative;
+      width: 100%;
+      height: 800px;
+      background: var(--c-bg-dark);
+      overflow: hidden;
+      OBJECT-POSITION: CENTER;
+
+    }
+    /* 배경 사진 */
+    .kv-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('img/01.webp');
+      background-size: 2560px auto;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+    .kv-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      
+    }
+    /* 파란 대각선 밴드 - 2560px 기준 무대에서 비례 축소 */
+    .kv-band-stage {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 2560px;
+      height: 937px;
+      pointer-events: none;
+      z-index: 2;
+      transform: translateX(-50%) scale(calc(100vw / 2560px));
+      transform-origin: top center;
+    }
+    @media (min-width: 2560px) {
+      .kv-band-stage {
+        transform: translateX(-50%) scale(1);
+      }
+    }
+    .kv-band {
+      position: absolute;
+      width: 300%;
+      height: 270px;
+      pointer-events: none;
+    }
+    .kv-band--left {
+      background: #1726ce;
+      transform: rotate(231.96deg);
+      transform-origin: center;
+      left: -210%;
+      top: 20%;
+    }
+    .kv-band--left-thin {
+      background: #325db8;
+      mix-blend-mode: hard-light;
+      transform: rotate(231.96deg);
+      transform-origin: center;
+      left: 190%;
+      top: 15%;
+      height: 80px;
+    }
+    .kv-band--right {
+      background: #1524cb;
+      transform: rotate(-51.04deg) scaleY(-1);
+      transform-origin: center;
+      right: -190%;
+      top: 20%;
+    }
+    .kv-band--right-thin {
+      background: #325db8;
+      mix-blend-mode: hard-light;
+      transform: rotate(-51.04deg) scaleY(-1);
+      transform-origin: center;
+      right: -180%;
+      top: 15%;
+      height: 100px;
+    }
+    /* 물 튀는 모션 - 2560px 기준 무대에서 비례 축소 (kv-band-stage와 동일 방식) */
+    .kv-splash-stage {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 2560px;
+      height: 962px;
+      pointer-events: none;
+      z-index: 1;
+      transform: translateX(-50%) scale(calc(100vw / 2560px));
+      transform-origin: top center;
+    }
+    @media (min-width: 2560px) {
+      .kv-splash-stage {
+        transform: translateX(-50%) scale(1);
+      }
+    }
+    .kv-splash-point {
+      position: absolute;
+      width: 0;
+      height: 0;
+    }
+    .kv-splash-point--hand      { left: 700px;  top: 580px; }
+    .kv-splash-point--foot      { left: 880px;  top: 780px; }
+    .kv-splash-point--wave-left  { left: 90px;   top: 880px; }
+    .kv-splash-point--wave-right { left: 2020px; top: 870px; }
+    .kv-drop {
+      position: absolute;
+      left: 0; top: 0;
+      width: 16px;
+      height: 16px;
+      background: #fff;
+      border-radius: 50%;
+      box-shadow: 0 0 12px 3px rgba(255,255,255,0.9), 0 0 24px 6px rgba(180,225,255,0.6);
+      opacity: 0;
+      animation: kvDropArc 1.8s cubic-bezier(.3,.6,.4,1) infinite;
+    }
+    .kv-drop.d1 { --dx: -80px;  --dy: -110px; animation-delay: 0s; }
+    .kv-drop.d2 { --dx: -26px;  --dy: -150px; animation-delay: 0.15s; }
+    .kv-drop.d3 { --dx: 32px;   --dy: -138px; animation-delay: 0.3s; }
+    .kv-drop.d4 { --dx: 90px;   --dy: -98px;  animation-delay: 0.45s; }
+    .kv-drop.d5 { --dx: 6px;    --dy: -164px; animation-delay: 0.6s; }
+    .kv-splash-point--foot .kv-drop { animation-delay: 0.9s; }
+    .kv-splash-point--foot .kv-drop.d2 { animation-delay: 1.05s; }
+    .kv-splash-point--foot .kv-drop.d3 { animation-delay: 1.2s; }
+    .kv-splash-point--foot .kv-drop.d4 { animation-delay: 1.35s; }
+    .kv-splash-point--foot .kv-drop.d5 { animation-delay: 1.5s; }
+    .kv-splash-point--wave-left .kv-drop { animation-delay: 0.4s; }
+    .kv-splash-point--wave-left .kv-drop.d2 { animation-delay: 0.55s; }
+    .kv-splash-point--wave-left .kv-drop.d3 { animation-delay: 0.7s; }
+    .kv-splash-point--wave-left .kv-drop.d4 { animation-delay: 0.85s; }
+    .kv-splash-point--wave-left .kv-drop.d5 { animation-delay: 1s; }
+    .kv-splash-point--wave-right .kv-drop { animation-delay: 1.3s; }
+    .kv-splash-point--wave-right .kv-drop.d2 { animation-delay: 1.45s; }
+    .kv-splash-point--wave-right .kv-drop.d3 { animation-delay: 1.6s; }
+    .kv-splash-point--wave-right .kv-drop.d4 { animation-delay: 1.75s; }
+    .kv-splash-point--wave-right .kv-drop.d5 { animation-delay: 1.9s; }
+    @keyframes kvDropArc {
+      0%   { transform: translate(0,0) scale(1.3); opacity: 1; }
+      70%  { opacity: 0.9; }
+      100% { transform: translate(var(--dx), var(--dy)) scale(0.3); opacity: 0; }
+    }
+    /* KV 텍스트 */
+    .kv-content {
+      position: absolute;
+      left: 44%;
+      top: 48%;
+      transform: translate(calc(-50% + 338px), -50%);
+      width: 730px;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      
+    }
+    .kv-logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      gap: 14px;
+      position: relative;
+      z-index: 2;
+    }
+    .kv-logos img { height: 55px; width: auto; }
+    .kv-title-image {
+      margin-top: 6px;
+
+    }
+    .kv-main-btn {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      animation: kvMainBtnFloat 2.6s ease-in-out infinite;
+    }
+    .kv-main-btn img {
+      display: block;
+      width: 100%;
+      max-width: 400px;
+      animation: kvMainBtnGlow 2.2s ease-in-out infinite;
+    }
+    @keyframes kvMainBtnFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    @keyframes kvMainBtnGlow {
+      0%, 100% { filter: drop-shadow(0 0 6px rgba(255,206,74,0.55)) drop-shadow(0 0 14px rgba(255,174,0,0.35)); }
+      50% { filter: drop-shadow(0 0 16px rgba(255,224,120,0.9)) drop-shadow(0 0 32px rgba(255,174,0,0.6)); }
+    }
+    .kv-title-image img {
+      display: block;
+      width: 100%;
+      max-width: 980px;
+      height: auto;
+    }
+    .kv-subtitle {
+      font-family: '격동고딕', sans-serif;
+      font-size: 28px;
+      color: var(--c-blue);
+      letter-spacing: 6px;
+      margin-top: 8px;
+    }
+    .kv-title {
+      font-family: '격동고딕', sans-serif;
+      font-size: 96px;
+      line-height: 1.1;
+      background: linear-gradient(180deg, #4b6fff 0%, #15235d 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: none;
+      letter-spacing: -4px;
+    }
+    .kv-sub-title {
+      font-family: '격동고딕', sans-serif;
+      font-size: 58px;
+      line-height: 1.1;
+      color: #fff;
+      margin-top: -20px;
+    }
+    .kv-date-wrap {
+      position: relative;
+      margin-top: 8px;
+    }
+    
+    /* [BACKEND] 이벤트 기간 동적 교체: event_start_date, event_end_date */
+    .kv-date {
+      position: relative;
+      font-family: 'Pretendard', sans-serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--c-gold);
+      padding: 10px 24px;
+      white-space: nowrap;
+      letter-spacing: -0.24px;
+      z-index: 1;
+    }
+    .kv-mobile-period {
+      display: none;
+    }
+    .kv-mobile-period {
+      display: none;
+    }
+
+    /* ════════════════════════════════════════
+       TICKER
+    ════════════════════════════════════════ */
+    .ticker-bar {
+      width: 100%;
+      height: 80px;
+      background: #000000;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .ticker-track {
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+      will-change: transform;
+      animation: ticker 40s linear infinite;
+      gap: 0;
+    }
+    .ticker-track:hover { animation-play-state: paused; }
+    @keyframes ticker {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .ticker-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      padding: 0 32px;
+      font-family: '격동고딕';
+      font-size: 26px;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+    .ticker-item--gold { color: var(--c-gold); }
+    .ticker-item--white { color: rgba(255,255,255,0.7); }
+    .ticker-dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--c-gold);
+      flex-shrink: 0;
+    }
+
+    /* ════════════════════════════════════════
+       HOW TO JOIN
+    ════════════════════════════════════════ */
+    .how-to-join {
+      position: relative;
+      background: url('img/02.webp') center/cover no-repeat;
+      padding: 80px 0 100px;
+      overflow: hidden;
+    }
+    .how-to-join .container { position: relative; z-index: 2; }
+    /* 타이틀 */
+    .htj-title {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .htj-title__img {
+      display: block;
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      margin: 0 auto;
+    }
+    .htj-title__main {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 8px;
+    }
+    .htj-title__main .t-white {
+      font-family: '격동고딕', sans-serif;
+      font-size: 36px;
+      color: #fff;
+    }
+    .htj-title__main .t-gold {
+      font-family: '격동고딕', sans-serif;
+      font-size: 46px;
+      color: var(--c-gold-bright);
+    }
+    /* STEP 박스 */
+    .step-box {
+      border-radius: 0;
+      margin-bottom: 40px;
+      overflow: hidden;
+    }
+    .step-box__header {
+      position: relative;
+      height: clamp(42px, 4.2vw, 50px);
+      background: linear-gradient(180deg, #2D5EFF 0%, #2D5EFF 100%);
+      display: flex;
+      align-items: center;
+      padding: 0 clamp(12px, 2vw, 16px);
+      overflow: hidden;
+    }
+    .step-box__header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      
+      pointer-events: none;
+    }
+    .step-box__header-label {
+      position: relative;
+      z-index: 1;
+      font-family: '격동고딕', sans-serif;
+      font-size: clamp(16px, 2vw, 24px);
+      font-weight: 900;
+      color: #fff;
+    }
+    .step-box__body {
+      padding: 0;
+    }
+    .step-box__panel {
+      padding: 32px 24px 30px;
+      background: #fafcff;
+      border-radius: 0;
+    }
+    /* 스텝 센터 타이틀 */
+    .step-center {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .step-center__title {
+      font-family: 'Pretendard', sans-serif;
+      font-size: 28px;
+      font-weight: 900;
+      color: #2D5EFF;
+      line-height: 50px;
+    }
+    .step-center__sub {
+      font-size: 20px;
+      color: #000000;
+      line-height: 1.5;
+      margin-top: 4px;
+    }
+    .step-center__btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      background: #2D5EFF;
+      border-radius: 97px;
+      padding: 8px 20px;
+      color: #FFFF00;
+      font-family: 'Pretendard', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 16px;
+      min-height: 44px;
+      transition: background 0.2s;
+      text-decoration: none;
+    }
+    .step-center__btn:hover { background: #1a45d4; }
+    /* 3단 카드 */
+    .step-cards {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 0;
+      flex-wrap: wrap;
+    }
+    .step-card-wrap {
+      --step-card-img-height: 200px;
+      --step-card-img-padding: 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .step-card {
+      width: 310px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+    .step-card__img-wrap {
+      position: relative;
+      width: 100%;
+      background: url('img/step_card_frame.png') center/100% 100% no-repeat;
+      padding: var(--step-card-img-padding);
+    }
+    .step-card__img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 258 / 200;
+      object-fit: contain;
+      border-radius: 4px;
+      background: #222;
+    }
+    .step-card__num-wrap {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 8px;
+      justify-content: center;
+    }
+    .step-box--step02 .step-card__num-wrap {
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      text-align: center;
+    }
+    .step-box--step02 .step-card__desc,
+    .step-box--step02 .step-card__note {
+      text-align: center;
+    }
+    .step-card__num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: url('img/step_num_bg.png') center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      color: #0957FF;
+    }
+    .step-card__desc {
+      font-size: 18px;
+      color: #000000;
+      text-align: center;
+      line-height: 1.5;
+      letter-spacing: -0.54px;
+    }
+    .step-card__desc b { font-weight: 700; }
+    .step-card__desc .step-card__link {
+      color: #469CFF;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .step-card__desc .step-card__link:hover { opacity: 0.8; }
+    /* 반응형 줄바꿈 유틸 */
+    .br-mobile { display: none; }   /* 모바일 최소 사이즈에서만 표시 */
+    .br-pc { display: inline; }     /* 데스크톱·태블릿에서만 표시 */
+    .step-card__note {
+      font-size: 13px;
+      color: #a2a1a1;
+      text-align: center;
+      line-height: 1.4;
+      margin-top: -10px;
+    }
+    .step-arrow {
+      font-size: 50px;
+      line-height: 1;
+      color: #a1a1a1;
+      opacity: 0.6;
+      flex-shrink: 0;
+      align-self: flex-start;
+      margin-top: calc(((var(--step-card-img-height) + (var(--step-card-img-padding) * 2)) - 1em) / 2);
+      padding: 0 12px;
+    }
+    /* STEP 탭 */
+    .step-tab-nav {
+      display: flex;
+      align-items: flex-end;
+      position: relative;
+      z-index: 2;
+      margin-bottom: 0;
+    }
+    .step-tab-btn {
+      flex: 1;
+      height: 75px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Pretendard', sans-serif;
+      font-size: clamp(20px, 2.2vw, 24px);
+      line-height: 1.2;
+      font-weight: 900;
+      cursor: pointer;
+      border: none;
+      transition: background 0.2s, color 0.2s;
+      min-height: 44px;
+    }
+    .step-tab-btn.is-active {
+      background: url('img/tab_active_bg.png') center/100% 100% no-repeat;
+      color: #fff;
+    }
+    .step-tab-btn.is-inactive {
+      background: url('img/tab_inactive_bg.png') center/100% 100% no-repeat;
+      color: #9195c0;
+    }
+    .step-tab-content {
+      display: none;
+      position: relative;
+      padding-top: 0;
+    }
+    .step-tab-content.is-active { display: block; }
+    .step-tab-content > div:first-child {
+      position: relative;
+      
+      margin-bottom: 0 !important;
+    }
+    .step-tab-cards-box {
+      width: 100%;
+      min-height: 490px;
+      margin: 0 auto;
+      border: 2px solid #0957ff;
+      background: #f1f7ff;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 16px;
+      flex-direction: column;
+    }
+    /* 배지 */
+    .badge-pc {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      background: #ffe7e9;
+      border: 1px solid #ff5c5e;
+      border-radius: 50px;
+      padding: 8px 18px;
+      width: max-content;
+      max-width: min(92vw, 560px);
+      font-size: clamp(14px, 1.4vw, 16px);
+      font-weight: 600;
+      color: #000000;
+      line-height: 1.35;
+      text-align: center;
+      margin-bottom: 0;
+      position: absolute;
+      left: 50%;
+      top: -22px;
+      transform: translate(-50%, -100%);
+      z-index: 3;
+      white-space: normal;
+    }
+    #contentPcRoom .badge-pc {
+      left: 25%;
+      top: -70px;
+
+    }
+    #contentPersonal .badge-pc {
+      left: 75%;
+      top: -70px;
+      
+    }
+    .badge-pc .t-red { color: #ff2427; font-weight: 700; }
+    /* 주의사항 배지 */
+    .notice-badge {
+      
+      width: fit-content;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #3a78ff;
+      border-radius: 500px;
+      padding: 8px 14px;
+      margin: 24px auto 0;
+      font-size: 14px;
+      color: #3a78ff;
+      line-height: 1.7;
+      text-align: center;
+    }
+    .notice-badge b { font-weight: 700; }
+
+    /* ════════════════════════════════════════
+       REWARDS
+    ════════════════════════════════════════ */
+    .rewards-section {
+      position: relative;
+      background: url('img/03.webp') center/cover no-repeat;
+      padding: 100px 0;
+      overflow: hidden;
+    }
+    .rewards-section .container { position: relative; z-index: 2; }
+
+    /* ── rewards-section 밝은 배경 대응 색상 오버라이드 ── */
+    .rewards-section .ssn-desc { color: #ffffff; }
+    .rewards-section .ssn-desc strong { color: #ffffff; }
+
+    .rewards-section .ssn-box {
+      background: rgba(255,255,255,0.88);
+      border-color: rgba(0,0,0,0.1);
+    }
+    .rewards-section .ssn-box:hover { background: rgba(240,235,220,0.95); }
+    .rewards-section .ssn-box__season-label { color: #7a5c00; }
+    .rewards-section .ssn-box__num { color: #1a1a1a; }
+    .rewards-section .ssn-box__topic { color: #9a6e00; }
+    .rewards-section .ssn-box__date { color: #444; }
+    .rewards-section .ssn-box.is-active {
+      background: rgba(255,248,225,0.95);
+      border-color: rgba(184,134,11,0.6);
+      box-shadow: 0 0 18px rgba(184,134,11,0.2);
+    }
+    .rewards-section .ssn-box.is-active .ssn-box__season-label,
+    .rewards-section .ssn-box.is-active .ssn-box__num { color: #7a5c00; }
+    .rewards-section .ssn-box.is-active .ssn-box__date { color: #333; }
+
+    .rewards-section .rewards-tab-desc {
+      background: rgba(255,255,255,0.88);
+    }
+    .rewards-section .rewards-description { color: #111; }
+    .rewards-section .rewards-note { color: #555; }
+    .rewards-section .reward-table-note { color: #777; }
+
+    .rewards-section .team-prize-extra-cards { background: rgba(255,255,255,0.15); }
+    .rewards-section .team-prize-extra-card {
+      background: rgba(255,255,255,0.88);
+      border-top-color: rgba(122,92,0,0.4);
+    }
+    .rewards-section .team-prize-extra-card + .team-prize-extra-card {
+      border-left-color: rgba(0,0,0,0.1);
+    }
+
+    /* 개인 랭킹전 보상 포디움 + 테이블 (밝은 배경 대응) */
+    .rewards-section .prize-podium { background: transparent; }
+    .rewards-section .prize-podium__item {
+      background: linear-gradient(180deg,#fbfcfe,#eef2f7);
+      border-color: #d3dbe6;
+      box-shadow: 0 8px 20px rgba(30,60,110,0.08);
+    }
+    .rewards-section .prize-podium__item:hover { box-shadow: 0 12px 28px rgba(30,60,110,0.14); }
+    .rewards-section .prize-podium__item--1st {
+      background: linear-gradient(180deg,#fffdf3,#fff3d0);
+      border-color: #f4c748;
+      box-shadow: 0 16px 34px rgba(240,180,40,0.28);
+    }
+    .rewards-section .prize-podium__item--3rd {
+      background: linear-gradient(180deg,#fdf6ee,#f6e6d4);
+      border-color: #e2c19b;
+      box-shadow: 0 8px 20px rgba(120,80,30,0.1);
+    }
+    .rewards-section .prize-podium__label { color: #333; }
+    .rewards-section .prize-podium__item--1st .prize-podium__label { color: #c98a00; }
+    .rewards-section .prize-podium__item--2nd .prize-podium__label { color: #6b7688; }
+    .rewards-section .prize-podium__item--3rd .prize-podium__label { color: #a9702f; }
+    .rewards-section .prize-podium__amt { color: #222; }
+    .rewards-section .prize-podium__amt--g { color: #b5860f; }
+
+    .rewards-section .reward-table { box-shadow: 0 10px 24px rgba(30,90,200,0.18); }
+    .rewards-section .reward-table__head { background: #2f74e0; }
+    .rewards-section .reward-table__body { background: #3d8bff; }
+    .rewards-section .reward-table__row:nth-child(even) { background: rgba(255,255,255,0.06); }
+
+    /* ssn-grand-prize 밝은 배경 대응 + 쿠폰 스타일 */
+    .rewards-section .ssn-grand-prize {
+      background:
+        linear-gradient(115deg, transparent 35%, rgba(255,255,255,0.85) 47.5%, rgba(255,248,214,0.95) 50%, rgba(255,255,255,0.85) 52.5%, transparent 65%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='2' stitchTiles='stitch' result='t'/%3E%3CfeColorMatrix in='t' type='matrix' values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0.12 0.12 0.12 0 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.28'/%3E%3C/svg%3E"),
+        radial-gradient(ellipse 90% 65% at 50% 115%, rgba(180,110,0,0.25) 0%, transparent 55%),
+        radial-gradient(ellipse 60% 45% at 50% 30%, rgba(255,255,255,0.45) 0%, transparent 60%),
+        linear-gradient(135deg, #f6dd82 0%, #fdf1b8 12%, #d4a017 32%, #fff6d5 50%, #d4a017 68%, #fdf1b8 88%, #f6dd82 100%);
+      background-size: 220% 220%, 260px 260px, auto, auto, auto;
+      background-repeat: no-repeat, repeat, no-repeat, no-repeat, no-repeat;
+      background-position: -60% -60%, 0 0, 0 0, 0 0, 0 0;
+      animation: ssnTicketShine 2.8s ease-in-out infinite;
+      border: 1px solid rgba(191,149,63,0.5);
+      box-shadow: 0 4px 24px rgba(180,130,0,0.25), inset 0 1px 0 rgba(255,255,255,0.6);
+
+      /* 양 사이드 반원 컷아웃 */
+      mask-image:
+        radial-gradient(circle 28px at 0% 50%, transparent 28px, black 28.01px),
+        radial-gradient(circle 28px at 100% 50%, transparent 28px, black 28.01px);
+      mask-composite: intersect;
+      -webkit-mask-image:
+        radial-gradient(circle 28px at 0% 50%, transparent 28px, black 28.01px),
+        radial-gradient(circle 28px at 100% 50%, transparent 28px, black 28.01px);
+      -webkit-mask-composite: destination-in;
+    }
+    @keyframes ssnTicketShine {
+      0% { background-position: -60% -60%, 0 0, 0 0, 0 0, 0 0; }
+      30% { background-position: 160% 160%, 0 0, 0 0, 0 0, 0 0; }
+      100% { background-position: 160% 160%, 0 0, 0 0, 0 0, 0 0; }
+    }
+    .ssn-grand-prize__tear-line {
+      display: none;
+    }
+    .rewards-section .ssn-grand-prize__tear-line {
+      display: block;
+      position: relative;
+      width: calc(100% + 0px);
+      height: 0;
+      border-top: 2px dashed rgba(184,134,11,0.4);
+      margin: 48px 0 0;
+      pointer-events: none;
+    }
+    .rewards-section .ssn-grand-prize__desc {
+      margin-top: 28px;
+    }
+    .rewards-section .ssn-grand-prize__glow {
+      background: radial-gradient(ellipse, rgba(255,174,0,0.12) 0%, rgba(255,110,0,0.04) 35%, transparent 62%);
+    }
+    .rewards-section .ssn-grand-prize__eyebrow { color: #9a6e00; }
+    .rewards-section .ssn-grand-prize__condition {
+      color: #333;
+      background: rgba(255,174,0,0.08);
+      border-color: rgba(184,134,11,0.35);
+    }
+    .rewards-section .ssn-grand-prize__title {
+      color: #1a1a1a;
+      text-shadow: 0 0 40px rgba(255,174,0,0.15);
+    }
+    .rewards-section .ssn-grand-prize__num {
+      color: #380d0d;
+      text-shadow: 0 0 40px rgba(255,174,0,0.2), 0 2px 0 rgba(0,0,0,0.1);
+    }
+    .rewards-section .ssn-grand-prize__unit { color: #333; }
+    .rewards-section .ssn-grand-prize__desc { color: rgba(0,0,0,0.45); }
+    .rewards-title { text-align: center; margin-bottom: 40px; }
+    .rewards-title .section-label {
+      margin-bottom: 16px;
+    }
+    .rewards-title__img {
+      display: block;
+      margin: 0 auto 20px;
+      max-width: 100%;
+      height: auto;
+    }
+    .rewards-tab-desc {
+      padding: 0px 24px 18px;
+      background: #0b0e24;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      text-align: center;
+    }
+    .rewards-tab-desc__divider {
+      display: block;
+      width: 100%;
+      max-width: 320px;
+      height: auto;
+      margin: 0 auto 12px;
+    }
+    .rewards-description {
+      font-family: 'Pretendard', sans-serif;
+      font-size: 18px;
+      color: #fff;
+      line-height: 1.5;
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+    .rewards-note {
+      font-family: 'Pretendard', sans-serif;
+      font-size: 14px;
+      color: #9d9d9d;
+      line-height: 1.5;
+      margin-bottom: 0;
+      font-weight: 400;
+    }
+    .rewards-title .t-white {
+      font-family: '격동고딕', sans-serif;
+      font-size: 36px;
+      color: #fff;
+    }
+    .rewards-title .t-blue {
+      font-family: '격동고딕', sans-serif;
+      font-size: 46px;
+      color: var(--c-blue);
+    }
+    #rewardPersonal {
+      background: #fff;
+     
+      overflow: hidden;
+      padding: 28px 40px 32px;
+    }
+    /* 경품 섹션 라벨 */
+    .rewards-section-label {
+      background: url('img/tab_active_bg.png') center/100% 100% no-repeat;
+      color: #fff;
+      font-family: 'Pretendard', sans-serif;
+      font-size: 24px;
+      font-weight: 900;
+      text-align: center;
+      height: 75px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    /* 경품 탭 */
+    .rewards-tab-nav {
+      display: flex;
+      align-items: flex-end;
+      position: relative;
+      z-index: 2;
+      margin-bottom: 0;
+    }
+    .rewards-tab-btn {
+      flex: 1;
+      height: 75px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Pretendard', sans-serif;
+      font-size: 24px;
+      font-weight: 900;
+      cursor: pointer;
+      border: none;
+      transition: background 0.2s, color 0.2s;
+      min-height: 44px;
+    }
+    .rewards-tab-btn.is-active {
+      background: url('img/tab_active_bg.png') center/100% 100% no-repeat;
+      color: #fff;
+    }
+    .rewards-tab-btn.is-inactive {
+      background: url('img/tab_inactive_bg.png') center/100% 100% no-repeat;
+      color: #9195c0;
+    }
+    .rewards-tab-content { display: none; }
+    .rewards-tab-content.is-active { display: block; }
+    /* 개인 랭킹전 보상 포디움 */
+    .prize-podium {
+      display: flex;
+      align-items: flex-end;
+      gap: 16px;
+      padding: 28px 20px 32px;
+      background: #1e1e1e;
+    }
+    /* [LOOP START] 경품 포디움 - prize_list 배열 반복 */
+    .prize-podium__item {
+      flex: 1;
+      position: relative;
+      background: #1c2245;
+      border: 3px solid transparent;
+      border-radius: 12px;
+      padding: 20px 14px 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .prize-podium__item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+    }
+    .prize-podium__item--2nd { border-color: #888; }
+    .prize-podium__item--3rd { border-color: #a87300; }
+    .prize-podium__item--1st {
+      border-color: var(--c-gold-bright);
+      transform: translateY(-16px);
+      padding-top: 26px;
+      box-shadow: 0 16px 34px rgba(252,184,0,0.25);
+      z-index: 1;
+    }
+    .prize-podium__item--1st:hover { transform: translateY(-20px); }
+    .prize-podium__crown {
+      margin: 0;
+      font-size: 22px;
+      line-height: 1;
+    }
+    .prize-podium__medal {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Pretendard', sans-serif;
+      font-weight: 900;
+      font-size: 20px;
+      color: #fff;
+      background: linear-gradient(180deg,#e8edf3,#b9c4d2);
+      box-shadow: inset 0 -3px 6px rgba(0,0,0,0.15);
+    }
+    .prize-podium__item--1st .prize-podium__medal {
+      width: 52px;
+      height: 52px;
+      font-size: 24px;
+      background: linear-gradient(180deg,#ffe27a,#f5a623);
+      box-shadow: inset 0 -3px 8px rgba(160,90,0,0.35);
+    }
+    .prize-podium__item--3rd .prize-podium__medal {
+      background: linear-gradient(180deg,#e8bd8e,#c8894a);
+      box-shadow: inset 0 -3px 6px rgba(80,40,0,0.2);
+    }
+    .prize-podium__label {
+      margin: 0;
+      font-family: 'Pretendard', sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      color: #fff;
+    }
+    .prize-podium__item--1st .prize-podium__label { color: var(--c-gold-bright); font-size: 18px; }
+    .prize-podium__item--2nd .prize-podium__label { color: #e2e2e2; }
+    .prize-podium__item--3rd .prize-podium__label { color: #a87300; }
+    .prize-tooltip-wrap {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 4px;
+      vertical-align: middle;
+      cursor: help;
+      outline: none;
+    }
+    .prize-tooltip-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--c-white);
+      color: #1e1e1e;
+      font-family: 'Pretendard', sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+      line-height: 1;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .prize-tooltip-wrap:hover .prize-tooltip-icon,
+    .prize-tooltip-wrap:focus-visible .prize-tooltip-icon {
+      transform: scale(1.08);
+      box-shadow: 0 0 0 3px rgba(255, 207, 64, 0.25);
+    }
+    .prize-tooltip {
+      position: absolute;
+      bottom: calc(100% + 12px);
+      left: 50%;
+      transform: translateX(-50%) translateY(4px);
+      width: max-content;
+      max-width: 320px;
+      padding: 12px 14px;
+      background: #111;
+      border: 1px solid var(--c-gold-bright);
+      border-radius: 8px;
+      color: #fff;
+      font-family: 'Pretendard', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1.55;
+      text-align: left;
+      white-space: normal;
+      word-break: keep-all;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.6);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.15s ease, visibility 0.15s ease, transform 0.15s ease;
+      z-index: 100;
+    }
+    .prize-tooltip::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 6px solid transparent;
+      border-top-color: var(--c-gold-bright);
+    }
+    .prize-tooltip__item {
+      display: block;
+      padding: 4px 0;
+    }
+    .prize-tooltip__item + .prize-tooltip__item {
+      border-top: 1px dashed rgba(255, 255, 255, 0.14);
+    }
+    .prize-tooltip-wrap:hover .prize-tooltip,
+    .prize-tooltip-wrap:focus-visible .prize-tooltip {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+      pointer-events: auto;
+    }
+    .prize-podium__img-wrap {
+      position: relative;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .prize-podium__gift-img {
+      max-width: 80%;
+      height: auto;
+      border-radius: 8px;
+      object-fit: contain;
+    }
+    .prize-podium__amounts {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      align-items: center;
+    }
+    .prize-podium__amt {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'Pretendard', sans-serif;
+      font-weight: 800;
+      font-size: 16px;
+      color: #fff;
+    }
+    .prize-podium__amt--big { font-size: 19px; font-weight: 900; }
+    .prize-podium__amt--g { color: #ffd76a; }
+    .prize-podium__coin {
+      width: 22px;
+      height: 26px;
+      object-fit: contain;
+    }
+    /* [LOOP END] 경품 포디움 */
+    .team-prize-extra-cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+      background: #0b0e24;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+    .team-prize-extra-card {
+      position: relative;
+      min-height: 170px;
+      padding: 20px 24px 18px;
+      background: linear-gradient(180deg, #1c2245 0%, #1c2245 100%);
+      border-top: 2px solid rgba(255, 174, 0, 0.45);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      overflow: hidden;
+    }
+    .team-prize-extra-card + .team-prize-extra-card {
+      border-left: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .team-prize-extra-card__txt {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      z-index: 1;
+    }
+    .team-prize-extra-card__img {
+      width: 180px;
+      max-width: 46%;
+      height: auto;
+      object-fit: contain;
+      z-index: 1;
+    }
+    /* 하위 보상 테이블 */
+    .reward-table {
+      margin-top: 0;
+      overflow: hidden;
+    }
+    .reward-table__head {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      background: #0B0E24;
+    }
+    .reward-table__head div {
+      padding: 12px 20px;
+      text-align: center;
+      font-family: 'Pretendard', sans-serif;
+      font-size: 18px;
+      font-weight: 800;
+      color: rgba(255,255,255,0.69);
+    }
+    .reward-table__body { background: #232E6E; }
+    .reward-table__row {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .reward-table__row:nth-child(even) { background: #222b5e; }
+    .reward-table__rank {
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Pretendard', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: #fff;
+    }
+    .reward-table__amount {
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: 'Pretendard', sans-serif;
+      font-size: 18px;
+      font-weight: 900;
+      color: #fff;
+    }
+    .reward-table__pair {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .reward-table__plus { opacity: 0.6; }
+    .reward-table__coin {
+      width: 22px;
+      height: 26px;
+      object-fit: contain;
+    }
+    .reward-table-note {
+      list-style: none;
+      margin-top: 14px;
+      padding: 0;
+      text-align: center;
+      font-family: 'Pretendard', sans-serif;
+      font-size: 13px;
+      color: #9d9d9d;
+      line-height: 1.6;
+    }
+    /* 특별순위 추가 보상 */
+    .special-bonus.special-bonus--hidden-by-tab {
+      display: none !important;
+    }
+    .special-bonus {
+      position: relative;
+      background: url('./img/Special Bonus_PC_bg.png') center/cover no-repeat;
+      overflow: hidden;
+    }
+    /* 개인 랭킹전 참여 BONUS 배너 */
+    .prtcp-banner {
+      display: flex;
+      align-items: stretch;
+      min-height: 200px;
+    }
+    .prtcp-banner__left {
+      flex: 1;
+      padding: 52px 24px 52px 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 14px;
+    }
+    .prtcp-banner__title {
+      font-family: 'Pretendard', sans-serif;
+      font-size: 28px;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+    }
+    .prtcp-banner__desc {
+      font-family: 'Pretendard', sans-serif;
+      font-size: 16px;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.65;
+    }
+    .prtcp-banner__center {
+      flex: 0 0 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 12px;
+    }
+    .prtcp-banner__img {
+      width: 100%;
+      max-width: 280px;
+      height: auto;
+      object-fit: contain;
+      object-position: bottom;
+      filter: drop-shadow(-4px 8px 20px rgba(0,0,0,0.35));
+    }
+    .prtcp-banner__right {
+      flex: 1;
+      padding: 52px 48px 52px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 6px;
+    }
+    .prtcp-banner__badge {
+      display: inline-flex;
+      align-self: flex-start;
+      background: #ffff00;
+      color: #0957ff;
+      font-family: 'Pretendard', sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      padding: 5px 16px;
+      border-radius: 100px;
+      letter-spacing: -0.3px;
+      margin-bottom: 8px;
+    }
+    .prtcp-banner__prize {
+      font-family: 'Pretendard', sans-serif;
+      font-size: 34px;
+      font-weight: 900;
+      color: #ffff00;
+      line-height: 1.1;
+      letter-spacing: -1px;
+    }
+    .prtcp-banner__note {
+      font-family: 'Pretendard', sans-serif;
+      font-size: 13px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.65;
+      margin-top: 8px;
+    }
+    /* 랭킹전 TIP 배너 — 박스 높이는 경품 이미지(--rb-img-h) 기준 */
+    .rewards-banner {
+      --rb-img-h: 148px;
+      position: relative;
+      margin-top: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      width: 100%;
+      min-height: 0;
+      height: auto;
+      padding: 8px 20px 8px 30px;
+      box-sizing: border-box;
+      overflow: hidden;
+      background: linear-gradient(18deg, #FFFF00 0%, #FFFF00 25%, #FFFF00 55%, #f017c8 82%, #3a78ff 100%);
+    }
+    .rewards-banner.fade-up {
+      transition-delay: 0.3s;
+    }
+    .rewards-banner__bg {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .rewards-banner__content {
+      position: relative;
+      z-index: 1;
+      flex: 1 1 0;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 6px;
+      padding-right: 8px;
+    }
+    .rewards-banner__media {
+      position: relative;
+      z-index: 1;
+      flex: 0 1 auto;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      align-self: center;
+      max-width: min(42%, 320px);
+      min-width: 0;
+    }
+    .rewards-banner__item-img {
+      position: relative;
+      display: block;
+      height: var(--rb-img-h);
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
+      object-position: right center;
+    }
+    .rewards-banner__tip {
+      position: relative;
+      top: auto;
+      left: auto;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .rewards-banner__tip-badge {
+      background: url('img/tip_badge_bg.png') center/100% 100% no-repeat;
+      padding: 4px 43px 5px 56px;
+
+      font-family: 'Pretendard', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      white-space: nowrap;
+    }
+    .rewards-banner__txt {
+      position: relative;
+      margin: 10px;
+      min-width: 0;
+      word-break: keep-all;
+    }
+    .rewards-banner__txt-main {
+      margin: 0;
+      font-family: '격동고딕', sans-serif;
+      font-size: 20px;
+      color: #000000;
+      line-height: 1.3;
+      letter-spacing: -1px;
+      
+      font-weight: 700;
+    }
+    .rewards-banner__txt-main .t-dark {
+      color: #000000;
+      font-size: 24px;
+      font-weight: 800;
+      
+    }
+    .rewards-banner__txt-sub {
+      margin: 10px 0 0;
+      font-family: 'Pretendard', sans-serif;
+      font-size: 15px;
+      color: rgba(0, 0, 0, 0.82);
+      line-height: 1.4;
+    }
+    .rewards-section__divider {
+      display: block;
+      width: 100%;
+      max-width: 480px;
+      height: auto;
+      margin: 44px auto 0;
+    }
+
+    /* ════════════════════════════════════════
+       NEW PLAYER EVENT
+    ════════════════════════════════════════ */
+    .new-player-event {
+      position: relative;
+      background: url('img/04.jpg') center/cover no-repeat;
+      padding: 90px 0 60px;
+      overflow: hidden;
+    }
+    .new-player-event .container { position: relative; z-index: 2; }
+    .npe-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .npe-title__heading {
+      margin: 0;
+      font: inherit;
+    }
+    .npe-title__img {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+      height: auto;
+    }
+    /* 이벤트 카드 2열 */
+    .event-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    /* [LOOP START] 이벤트 카드 - event_card_list 배열 반복 */
+    .event-card {
+      
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+    .event-card:hover {
+      transform: translateY(-4px);
+    }
+    .event-card__header {
+      height: 43px;
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      font-family: 'Pretendard', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .event-card__header--blue {
+      background: url('img/event_header_blue.png') center/100% 100% no-repeat;
+    }
+    .event-card__header--orange {
+      background: url('img/event_header_orange.png') center/100% 100% no-repeat;
+    }
+    .event-card__body {
+      padding: 28px 24px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      min-height: 400px;
+      position: relative;
+      background: #fff;
+      min-height: 504px;
+    }
+    .event-card__icon-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      align-self: center;
+      width: 100%;
+    }
+    .event-card__icon { width: 46px; height: 46px; }
+    .event-card__title-text {
+      font-family: 'Pretendard', sans-serif;
+      font-size: clamp(22px, 2.8vw, 30px);
+      font-weight: 900;
+      color: #000;
+    }
+    .event-card__desc {
+      font-size: clamp(15px, 1.9vw, 18px);
+      color: #3c3c3c;
+      text-align: center;
+      line-height: clamp(1.35, 1.5, 1.55);
+      align-self: center;
+      word-break: keep-all;
+    }
+    .event-card__desc b { font-weight: 900; }
+    .event-card__gcoin-img {
+      width: 260px;
+      height: auto;
+      object-fit: contain;
+    }
+    /* [BACKEND] 보상 금액 동적 교체: reward_amount_gcoin */
+    .event-card__amount {
+      font-family: '격동고딕', sans-serif;
+      font-size: 44px;
+      font-weight: 800;
+      letter-spacing: -0.88px;
+    }
+    .event-card__amount--blue { color: var(--c-blue); }
+    .event-card__amount--orange { color: var(--c-orange); }
+    .event-card__notice {
+      font-size: 18px;
+      color: #868686;
+      
+    }
+    /* [LOOP END] 이벤트 카드 */
+    /* 로지텍 배너 */
+    /* [BACKEND] 로지텍 경품 배너 영역 - 백엔드에서 이미지/링크 교체 필요: logitech_banner_img, logitech_banner_url */
+    .logitech-banner {
+      position: relative;
+      background: #0d0d10 url('img/logitech_banner_bg.png') center/cover no-repeat;
+      min-height: 96px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 22px 24px;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+    /* 섹션별 분리 스타일 훅 — 각 배너를 독립적으로 커스터마이즈 가능 */
+    /* NEW PLAYER EVENT 섹션 전용 오버라이드는 .logitech-banner--npe { ... } 에 추가 */
+    /* WINNER REWARDS 섹션 전용 오버라이드는 .logitech-banner--wr { ... } 에 추가 */
+    .logitech-banner__content {
+      flex: 1 1 auto;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 6px;
+      z-index: 1;
+    }
+    .logitech-banner__badge {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px 18px 7px;
+      background: linear-gradient(135deg, #ff3d3d 0%, #ff8a1f 100%);
+      border-radius: 999px;
+      box-shadow:
+        0 2px 8px rgba(255, 72, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.25);
+      font-family: 'Pretendard', sans-serif;
+      font-size: 18px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.2px;
+      line-height: 1;
+      white-space: nowrap;
+      margin-bottom: 4px;
+    }
+    .logitech-banner__text-sub {
+      margin: 0;
+      font-family: 'Pretendard', sans-serif;
+      font-size: 18px;
+      font-weight: 500;
+      color: #ffffff;
+      line-height: 1.35;
+      letter-spacing: -0.2px;
+      text-align: center;
+      word-break: keep-all;
+    }
+    .logitech-banner__text-sub .t-accent {
+      color: #ffd93d;
+      font-weight: 700;
+    }
+    .logitech-banner__text-main {
+      margin: 0;
+      font-family: '격동고딕', sans-serif;
+      font-size: 26px;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.15;
+      letter-spacing: -0.5px;
+      text-align: center;
+      word-break: keep-all;
+    }
+    .logitech-banner__media {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      align-self: stretch;
+      /* 이미지가 배너 세로 전체(패딩 포함)를 채우도록 패딩 상쇄 */
+      margin-top: -12px;
+      margin-bottom: -12px;
+      overflow: visible;              /* 확대된 이미지가 배너 바운더리까지 확장 */
+      z-index: 1;
+      height: 140px;
+    }
+    .logitech-banner__product {
+      display: block;
+      height: 190%;                   /* 박스(129px)보다 크게 → overflow:hidden으로 잘림 */
+      width: auto;
+      max-width: none;
+      object-fit: contain;
+      pointer-events: none;           /* 잘린 영역이 클릭 방해하지 않도록 */
+    }
+    /* 로고는 배너 우측 상단 고정 */
+    .logitech-banner__brand {
+      position: absolute;
+      top: 10px;
+      right: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: flex-start;
+      padding: 0;
+      z-index: 3;
+    }
+    .logitech-banner__logo {
+      display: block;
+      height: 22px;
+      width: auto;
+    }
+    .npe-notice {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 16px;
+      color: rgba(0,0,0,0.4);
+    }
+
+    /* ════════════════════════════════════════
+       WINNER REWARDS
+    ════════════════════════════════════════ */
+    .winner-rewards {
+      position: relative;
+      background: url('img/05.jpg') center/cover no-repeat;
+      padding: 90px 0 60px;
+      overflow: hidden;
+    }
+    .winner-rewards::before {
+      content: '';
+      position: absolute;
+      width: 300%;
+      height: 200px;
+      background: #1c1c1c;
+      transform: rotate(-51deg);
+      right: -100%;
+      top: -40px;
+      pointer-events: none;
+    }
+    .winner-rewards .container { position: relative; z-index: 2; }
+    .wr-title {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .wr-title__heading {
+      margin: 0;
+      font: inherit;
+    }
+    .wr-title__img {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+      height: auto;
+    }
+    .wr-title__sub {
+      font-size: 20px;
+      color: #c9c9c9;
+      line-height: 1.6;
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    /* 치킨 카드 */
+    .chicken-cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    /* [LOOP START] 치킨 달성 카드 - chicken_reward_list 배열 반복 */
+    .chicken-card {
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 570px;
+      height: 288px;
+      background: #FFAE00;
+      overflow: hidden;
+      display: flex;
+      transition: transform 0.2s, box-shadow 0.2s;
+      padding: 20px 22px 24px;
+      justify-self: center;
+    }
+    .chicken-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.5);
+    }
+    .chicken-card__badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-start;
+      align-self: flex-start;
+      
+      max-width: 100%;
+      padding: 6px 56px 8px;
+      background: url('img/04_tag.svg') center / 100% 100% no-repeat;
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+      white-space: nowrap;
+      text-align: left;
+    }
+    .chicken-card__body {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      gap: 8px;
+      flex: 1;
+      min-width: 0;
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+    }
+    .chicken-card__body-row {
+      display: flex;
+      align-items: stretch;
+      justify-content: space-between;
+      gap: 12px;
+      min-width: 0;
+      flex: 1;
+      flex-direction: column;
+    }
+    .chicken-card__visual {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      min-width: 182px;
+      flex: 0 0 182px;
+      align-self: stretch;
+      text-align: center;
+    }
+    .chicken-card__info { flex: 1; min-width: 0; padding-top: 2px; }
+    .chicken-card__title {
+      font-family: 'Pretendard', sans-serif;
+      font-size: 32px;
+      font-weight: 900;
+      color: #000;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin: 0 0 8px;
+    }
+    .chicken-card__title b { font-weight: 900; }
+    .chicken-card__desc {
+      font-size: 20px;
+      color: #000000;
+      line-height: 1.45;
+      margin: 0;
+      word-break: keep-all;
+    }
+    .chicken-card__prize {
+      font-family: 'Pretendard', sans-serif;
+      font-size: 22px;
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      color: #000;
+      text-align: center;
+      margin: 6px 0 0;
+      width: 100%;
+      max-width: 100%;
+      white-space: normal;
+      word-break: keep-all;
+    }
+    .chicken-card__img {
+      display: block;
+      height: 170px;
+      max-width: 100%;
+    
+      object-fit: contain;
+      flex-shrink: 0;
+      margin: 0 auto;
+    }
+    /* [LOOP END] 치킨 달성 카드 */
+    .wr-notice {
+      margin-top: 20px;
+      font-size: 15px;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.8;
+      text-align: center;
+    }
+
+    /* ════════════════════════════════════════
+       FOOTER
+    ════════════════════════════════════════ */
+    .cb-footer {
+      position: relative;
+      background: var(--c-bg-darker);
+      padding: 65px 0 80px;
+      overflow: hidden;
+    }
+    .cb-footer::before {
+      content: '';
+      position: absolute;
+      width: 300%;
+      height: 1600px;
+      background: #121212;
+      transform: rotate(129.51deg);
+      left: -100%;
+      top: -800px;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .cb-footer .container { position: relative; z-index: 2; }
+    .footer-title {
+      font-family: '격동고딕', sans-serif;
+      font-size: 26px;
+      color: #fff;
+      margin-bottom: 28px;
+    }
+    .footer-list {
+      list-style: disc;
+      padding-left: 20px;
+      font-family: 'Pretendard', sans-serif;
+      font-size: 16px;
+      color: #e5e5e5;
+      line-height: 2;
+    }
+    .footer-list li { margin-bottom: 4px; }
+    .footer-list li p.indent {
+      list-style: none;
+      margin-left: 20px;
+      color: #e5e5e5;
+    }
+    .footer-list a {
+      color: #4579ff;
+      text-decoration: underline;
+    }
+    .footer-list strong {
+      color: var(--c-gold);
+      font-weight: 800;
+    }
+
+    /* ════════════════════════════════════════
+       SUMMER BURNING SEASON
+    ════════════════════════════════════════ */
+    .summer-season {
+      margin-bottom: 48px;
+      position: relative;
+    }
+
+    /* ── 헤더 영역 ── */
+    .ssn-header {
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    .ssn-title {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      font-family: '격동고딕', sans-serif;
+      font-size: 28px;
+      color: #fff;
+      letter-spacing: 5px;
+      padding: 14px 44px;
+      position: relative;
+      margin-bottom: 22px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, transparent 100%);
+      clip-path: polygon(14px 0%, calc(100% - 14px) 0%, 100% 14px, 100% calc(100% - 14px), calc(100% - 14px) 100%, 14px 100%, 0% calc(100% - 14px), 0% 14px);
+    }
+    .ssn-title::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: transparent;
+      clip-path: polygon(14px 0%, calc(100% - 14px) 0%, 100% 14px, 100% calc(100% - 14px), calc(100% - 14px) 100%, 14px 100%, 0% calc(100% - 14px), 0% 14px);
+      border: 1.5px solid rgba(255,255,255,0.35);
+      pointer-events: none;
+    }
+    .ssn-title__fire { font-size: 22px; }
+    .ssn-desc {
+      font-family: 'Pretendard', sans-serif;
+      font-size: 18px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 28px;
+      line-height: 1.65;
+    }
+    .ssn-desc strong { color: #fff; font-weight: 800; }
+    .ssn-season-tag {
+      display: inline-block;
+      height: 32px;
+      width: auto;
+      margin-bottom: 24px;
+    }
+
+    /* 4개 시즌 박스 */
+    .ssn-season-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+      margin-bottom: 0;
+    }
+    .ssn-box {
+      position: relative;
+      padding: 22px 12px 24px;
+      background: linear-gradient(170deg, #313c5d 0%, #0e162c 100%);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-top: 2px solid transparent;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 7px;
+      overflow: hidden;
+      transition: background 0.25s, border-top-color 0.25s;
+    }
+    .ssn-box::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--c-gold), transparent);
+      opacity: 0.8;
+    }
+    .ssn-box::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255,174,0,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .ssn-box:hover { background: linear-gradient(170deg, #1e2335 0%, #13161f 100%); }
+    .ssn-box.is-active {
+      background: linear-gradient(170deg, #1c2340 0%, #0f1422 100%);
+      border-color: rgba(255,174,0,0.55);
+      box-shadow: 0 0 18px rgba(255,174,0,0.15);
+    }
+    .ssn-box.is-active::before {
+      background: linear-gradient(90deg, transparent, var(--c-gold), transparent);
+      opacity: 1;
+    }
+    .ssn-box.is-active .ssn-box__season-label,
+    .ssn-box.is-active .ssn-box__num { color: var(--c-gold); }
+    .ssn-box.is-active .ssn-box__date { color: #fff; }
+    .ssn-box__season-label {
+      font-family: 'Pretendard', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--c-gold);
+      letter-spacing: 3px;
+      line-height: 1;
+    }
+    .ssn-box__num {
+      font-family: '격동고딕', sans-serif;
+      font-size: 52px;
+      color: #fff;
+      line-height: 1;
+      letter-spacing: -2px;
+    }
+    .ssn-box__topic {
+      font-family: 'Pretendard', sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--c-gold);
+      letter-spacing: -0.5px;
+      line-height: 1.3;
+    }
+    .ssn-box__divider {
+      width: 36px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,174,0,0.55), transparent);
+    }
+    .ssn-box__date {
+      font-family: 'Pretendard', sans-serif;
+      font-size: 16px;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.5;
+      letter-spacing: -0.3px;
+    }
+
+    .ssn-grand-prize__particles {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    /* ── 그랜드 프라이즈 ── */
+    .ssn-grand-prize {
+      position: relative;
+      margin-top: 6px;
+      padding: 40px 24px 32px;
+      /* 프리미엄 레이어드 배경:
+         아래에서 올라오는 골드 헤이즈 + 좌우 비네트 + 딥 스페이스 베이스 */
+      background:
+        radial-gradient(ellipse 90% 65% at 50% 115%, rgba(210,120,0,0.28) 0%, transparent 55%),
+        radial-gradient(ellipse 60% 45% at 50% 60%, rgba(255,174,0,0.05) 0%, transparent 60%),
+        radial-gradient(ellipse 55% 100% at 0% 50%, rgba(4,8,28,0.7) 0%, transparent 55%),
+        radial-gradient(ellipse 55% 100% at 100% 50%, rgba(4,8,28,0.7) 0%, transparent 55%),
+        linear-gradient(180deg, #6c5a31 0%, #0b1430 55%, #363712 100%);
+      overflow: hidden;
+      text-align: center;
+    }
+    /* 상단 금색 라인 */
+    .ssn-grand-prize::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent 0%, var(--c-gold) 20%, var(--c-gold-bright) 50%, var(--c-gold) 80%, transparent 100%);
+      box-shadow: 0 0 18px 1px rgba(255,174,0,0.35);
+    }
+    /* 하단 미러 라인 */
+    .ssn-grand-prize::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent 10%, rgba(255,174,0,0.25) 40%, rgba(255,174,0,0.25) 60%, transparent 90%);
+    }
+    /* 배경 중앙 글로우 */
+    .ssn-grand-prize__glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 1000px;
+      height: 560px;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(ellipse, rgba(255,174,0,0.2) 0%, rgba(255,110,0,0.07) 35%, transparent 62%);
+      pointer-events: none;
+    }
+    /* 모서리 HUD 장식 */
+    .ssn-corner {
+      position: absolute;
+      width: 22px;
+      height: 22px;
+      border-color: rgba(255,174,0,0.45);
+      border-style: solid;
+      pointer-events: none;
+    }
+    .ssn-corner--tl { top: 14px; left: 14px; border-width: 2px 0 0 2px; }
+    .ssn-corner--tr { top: 14px; right: 14px; border-width: 2px 2px 0 0; }
+    .ssn-corner--bl { bottom: 14px; left: 14px; border-width: 0 0 2px 2px; }
+    .ssn-corner--br { bottom: 14px; right: 14px; border-width: 0 2px 2px 0; }
+    /* 좌우 세로 장식선 */
+    .ssn-grand-prize__side-line {
+      position: absolute;
+      top: 20%;
+      bottom: 20%;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, rgba(255,174,0,0.25) 30%, rgba(255,174,0,0.25) 70%, transparent);
+    }
+    .ssn-grand-prize__side-line--l { left: 40px; }
+    .ssn-grand-prize__side-line--r { right: 40px; }
+    .ssn-grand-prize__eyebrow {
+      font-family: 'Pretendard', sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--c-gold);
+      letter-spacing: 10px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      position: relative;
+      opacity: 0.9;
+    }
+    .ssn-grand-prize__condition {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,174,0,0.07);
+      border: 1px solid rgba(255,174,0,0.28);
+      padding: 8px 22px;
+      font-family: 'Pretendard', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 32px;
+      position: relative;
+      letter-spacing: 0.3px;
+    }
+    .ssn-grand-prize__title {
+      font-family: '격동고딕', sans-serif;
+      font-size: 46px;
+      color: #fff;
+      letter-spacing: 8px;
+      line-height: 1;
+      position: relative;
+      margin-bottom: 24px;
+      text-shadow: 0 0 80px rgba(255,174,0,0.18), 0 2px 0 rgba(0,0,0,0.6);
+    }
+    .ssn-grand-prize__amount {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .ssn-grand-prize__num {
+      font-family: 'Giants', 'Pretendard', sans-serif;
+      font-size: 92px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -4px;
+      line-height: 1;
+      text-shadow:
+        0 0 60px rgba(255,174,0,0.22),
+        0 0 120px rgba(255,174,0,0.08),
+        0 3px 0 rgba(0,0,0,0.7);
+    }
+    .ssn-grand-prize__coin {
+      width: 68px;
+      height: auto;
+      object-fit: contain;
+      flex-shrink: 0;
+      filter: drop-shadow(0 0 14px rgba(255,174,0,0.5));
+    }
+    .ssn-grand-prize__unit {
+      font-family: 'Pretendard', sans-serif;
+      font-size: 26px;
+      font-weight: 800;
+      color: rgba(255,255,255,0.85);
+      align-self: flex-end;
+      padding-bottom: 10px;
+      letter-spacing: -0.5px;
+    }
+    .ssn-grand-prize__desc {
+      font-family: 'Pretendard', sans-serif;
+      font-size: 16px;
+      color: rgba(255,255,255,0.38);
+      line-height: 1.6;
+      position: relative;
+      letter-spacing: -0.2px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .ssn-grand-prize__desc-line {
+      display: block;
+    }
+    /* 반응형 */
+    @media (max-width: 768px) {
+      .ssn-season-row { grid-template-columns: repeat(2, 1fr); gap: 5px; }
+      .ssn-grand-prize__num { font-size: 62px; letter-spacing: -2px; }
+      .ssn-grand-prize__coin { width: 50px; }
+      .ssn-grand-prize__unit { font-size: 18px; padding-bottom: 6px; }
+      .ssn-grand-prize__title { font-size: 34px; letter-spacing: 5px; }
+      .ssn-grand-prize { padding: 44px 20px 40px; }
+      .ssn-grand-prize__side-line { display: none; }
+    }
+    @media (max-width: 480px) {
+      .ssn-title { font-size: 17px; letter-spacing: 3px; padding: 12px 24px; }
+      .ssn-desc { font-size: 14px; }
+      .ssn-box__num { font-size: 40px; }
+      .ssn-box { padding: 18px 8px 20px; }
+      .ssn-grand-prize__num { font-size: 46px; letter-spacing: -2px; }
+      .ssn-grand-prize__unit { font-size: 14px; padding-bottom: 4px; }
+      .ssn-grand-prize__coin { width: 38px; }
+      .ssn-grand-prize__title { font-size: 26px; letter-spacing: 3px; }
+      .ssn-grand-prize__condition { font-size: 13px; padding: 6px 14px; }
+      .ssn-corner { display: none; }
+    }
+
+    /* ════════════════════════════════════════
+       FADE-IN 애니메이션
+    ════════════════════════════════════════ */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-up.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ════════════════════════════════════════
+       반응형
+    ════════════════════════════════════════ */
+    /* ── 1280px 이하 ── */
+    @media (max-width: 1280px) {
+      :root { --container: 960px; }
+      .kv-content {
+        transform: translate(calc(-50% + 200px), -50%);
+        width: 580px;
+      }
+
+      .chicken-card__desc {
+      font-size: 16px;       /* 원래 20px에서 16px로 글자 크기를 줄임 */
+      line-height: 1.4;      /* 줄간격도 화면에 맞게 미세 조절 */
+      }
+      
+      .kv-title { font-size: 72px; }
+      .kv-sub-title { font-size: 46px; }
+      .chicken-card {
+        height: auto;
+        min-height: 288px;
+      }
+      .chicken-card__title { font-size: 32px; }
+      .chicken-card__prize { font-size: 26px; }
+
+      /* 이벤트 카드 설명 — 1280 이하에서 2줄 유지되도록 폰트 축소 */
+      .event-card__desc {
+        font-size: 16px;
+        line-height: 1.45;
+      }
+
+      /* 로지텍 배너 — 768~1280 포함 ≤1280 범위 (모바일 ≤480은 아래에서 재정의) */
+      .logitech-banner {
+        gap: 14px;
+        padding: 24px 20px;
+        min-height: 108px;
+      }
+      .logitech-banner__content {
+        flex: 1 1 0;          /* 텍스트 영역에 남는 공간 우선 분배 */
+        min-width: 0;
+      }
+      .logitech-banner__text-sub { font-size: 18px; }
+      .logitech-banner__text-main { font-size: 22px; line-height: 1.2; }
+      /* 로고는 배너 우측 상단 고정 — 제품 이미지가 로고와 겹쳐도 됨 */
+      .logitech-banner__brand {
+        position: absolute;
+        top: 10px;
+        right: 16px;
+        align-self: auto;
+        padding: 0;
+        z-index: 3;
+      }
+      .logitech-banner__logo { height: 18px; }
+      /* 미디어 컨테이너 크기는 유지, 이미지만 확대해 텍스트 영역으로 침범 */
+      .logitech-banner__media {
+        margin-top: 0;
+        margin-bottom: 0;
+        overflow: visible;    /* 확대된 이미지가 컨테이너 밖으로 보이도록 */
+        z-index: 2;
+      }
+      .logitech-banner__product {
+        height: 100%;
+        width: auto;
+        max-width: 140px;
+        transform: scale(1.5);
+        transform-origin: right center;   /* 왼쪽(텍스트 쪽)으로 확대 */
+        pointer-events: none;             /* 확대 영역이 텍스트 클릭 방해 않도록 */
+      }
+    }
+    @media (min-width: 785px) and (max-width: 1280px) {
+      .step-tab-cards-box {
+        padding: 18px 12px;
+      }
+      .step-cards {
+        gap: 14px;
+        align-items: stretch;
+      }
+      .step-card-wrap {
+        width: calc(50% - 7px);
+        justify-content: center;
+      }
+      .step-card {
+        width: 100%;
+        max-width: 420px;
+      }
+      .step-arrow {
+        display: none;
+      }
+    }
+    @media (max-width: 1080px) {
+      .chicken-cards { grid-template-columns: 1fr; }
+      .chicken-card {
+        max-width: 680px;
+      }
+    }
+    /* ── 768px 이하 ── */
+    @media (max-width: 768px) {
+      :root { --container: 100%; }
+      .cb-header {
+        height: auto;
+        
+        padding: 8px 0;
+      }
+      .cb-header__inner { justify-content: space-between; padding: 0 20px; }
+      .cb-header__notice-wrap {
+        flex: 1;
+        min-width: 0;
+        gap: 12px;
+      }
+      /* 모바일에서는 PC방 토글 버튼(이미지 포함) 숨기고 공지 텍스트가 그 영역까지 좌측 정렬로 확장 */
+      .toggle-btn { display: none; }
+      .cb-header__notice {
+        white-space: normal;
+        word-break: keep-all;
+        font-size: 14px;
+        line-height: 1.45;
+        text-align: left;
+        flex: 1;
+        min-width: 0;
+      }
+      .btn-share { display: none; }
+      .mobile-fab { display: flex; }
+      .kv-section {
+        height: calc(100vw * 2.272); /* m-kv.png 실제 비율 852/375 = 2.272 */
+      }
+      .kv-bg {
+        background-image: url('img/m-kv.png');
+        background-size: cover;
+        background-position: center top;
+      }
+      .kv-band,
+      .kv-band-stage,
+      .kv-splash-stage { display: none; }
+      .kv-content {
+        position: relative;
+        left: auto; top: auto;
+        transform: none;
+        width: 100%;
+        padding: 10px 24px 30px;
+        height: 100%;
+        min-height: 100%;
+        box-sizing: border-box;
+      }
+      .kv-title-image {
+        display: none;
+      }
+      .kv-main-btn {
+        display: none;
+      }
+      .kv-title { font-size: 52px; }
+      .kv-sub-title { font-size: 36px; }
+      .kv-subtitle { font-size: 20px; }
+      .kv-btn-wrap {
+        height: 72px;
+        margin-top: auto;
+        margin-bottom: 8px;
+      }
+      .kv-btn { height: 72px; font-size: 24px; }
+      .kv-mobile-period {
+        display: none;
+        margin: auto;
+        text-align: center;
+        color: #Fff2b5;
+        font-family: 'Pretendard', sans-serif;
+        font-size: clamp(14px, 4vw, 30px);
+        font-weight: 700;
+        line-height: 1.35;
+        white-space: pre-line;
+        transform: translatex(-30px);
+        position: absolute;
+        bottom: 40px;
+        top: auto;
+        width: 100%;
+      }
+      .step-tab-content > div:first-child {
+        height: auto;
+        margin-bottom: 12px !important;
+      }
+      .badge-pc {
+        position: static;
+        left: auto;
+        top: auto;
+        transform: none;
+        margin: 0 auto 20px;
+        max-width: min(100%, 320px);
+        min-height: 44px;
+        padding: 8px 8px;
+        font-size: 13px;
+      }
+      #contentPcRoom .badge-pc,
+      #contentPersonal .badge-pc {
+        left: auto;
+        top: auto;
+      }
+      .team-prize-extra-cards { grid-template-columns: 1fr; }
+      .team-prize-extra-card {
+        min-height: 140px;
+        padding: 18px 16px 14px;
+      }
+      .team-prize-extra-card + .team-prize-extra-card {
+        border-left: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .team-prize-extra-card__img {
+        width: 150px;
+        max-width: 42%;
+      }
+      .event-cards { grid-template-columns: 1fr; }
+      .chicken-cards { grid-template-columns: 1fr; }
+      .chicken-card {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        padding: 18px 16px 22px;
+      }
+      .chicken-card__body {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+        height: auto;
+      }
+      .chicken-card__badge {
+        min-width: 0;
+        white-space: normal;
+        text-align: center;
+        justify-content: center;
+        align-self: center;
+      }
+      .chicken-card__body-row {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+      }
+      .chicken-card__info {
+        text-align: center;
+      }
+      .chicken-card__desc {
+        text-align: center;
+      }
+      .chicken-card__img {
+        width: auto;
+        max-width: min(200px, 72vw);
+        align-self: center;
+      }
+      .chicken-card__visual {
+        min-width: 0;
+        width: 100%;
+        flex: none;
+      }
+      .chicken-card__title {
+        font-size: 22px;
+        line-height: 1.25;
+        white-space: normal;
+      }
+      .chicken-card__desc {
+        font-size: 20px;
+        line-height: 1.5;
+      }
+      .chicken-card__prize {
+        font-size: 22px;
+        line-height: 1.2;
+        white-space: normal;
+      }
+      .prtcp-banner { flex-direction: column; min-height: 0; }
+      .prtcp-banner__left { flex: none; padding: 28px 20px 16px; }
+      .prtcp-banner__center { flex: none; order: 3; padding: 0 20px 24px; }
+      .prtcp-banner__right { flex: none; order: 2; padding: 16px 20px 24px; }
+      .prtcp-banner__title { font-size: 22px; }
+      .prtcp-banner__prize { font-size: 26px; }
+      .step-cards { flex-direction: column; align-items: center; }
+      .step-arrow { display: none; }
+      #rewardPersonal { padding: 16px 12px 20px; }
+      .prize-podium { gap: 8px; padding: 20px 12px 24px; }
+      .prize-podium__item { padding: 16px 8px 14px; }
+      .prize-podium__item--1st { transform: translateY(-10px); padding-top: 22px; }
+      .prize-podium__medal { width: 36px; height: 36px; font-size: 16px; }
+      .prize-podium__item--1st .prize-podium__medal { width: 44px; height: 44px; font-size: 20px; }
+      .prize-podium__label { font-size: 14px; }
+      .prize-podium__item--1st .prize-podium__label { font-size: 15px; }
+      .prize-podium__amt { font-size: 13px; gap: 4px; }
+      .prize-podium__amt--big { font-size: 15px; }
+      .prize-podium__coin { width: 18px; height: 21px; }
+      .reward-table__head div,
+      .reward-table__rank,
+      .reward-table__amount { padding: 10px 10px; font-size: 15px; }
+      .rewards-banner {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 16px 20px 18px;
+        gap: 12px;
+      }
+      .rewards-banner__content {
+        padding-right: 0;
+        align-items: center;
+        text-align: center;
+      }
+      .rewards-banner__tip {
+        justify-content: center;
+        width: 100%;
+      }
+      .rewards-banner__txt {
+        text-align: center;
+        width: 80%;
+      }
+      .rewards-banner__txt-main,
+      .rewards-banner__txt-sub {
+        text-align: center;
+      }
+      .rewards-banner__media {
+        max-width: 100%;
+        justify-content: center;
+        align-self: center;
+      }
+      .rewards-banner__item-img {
+        height: auto;
+        max-height: min(160px, 40vw);
+        object-position: center;
+      }
+      .rewards-banner__txt-main {
+        line-height: 1.35;
+        font-size: 18px;
+      }
+      .rewards-banner__txt-main .t-dark { font-size: 22px; }
+      .rewards-banner__txt-sub { font-size: 18px; }
+
+    }
+    /* ── 480px 이하 ── */
+    @media (max-width: 480px) {
+      .kv-title { font-size: 40px; }
+      .kv-sub-title { font-size: 28px; }
+      .kv-subtitle { font-size: 16px; letter-spacing: 2px; }
+      .kv-date { font-size: 14px; }
+      .htj-title__main .t-gold { font-size: 32px; }
+      .htj-title__main .t-white { font-size: 26px; }
+      .npe-title__img { max-width: min(100%, 520px); }
+      .wr-title__img { max-width: min(100%, 560px); }
+      .step-card { width: 100%; }
+      .cb-header__inner {
+        align-items: flex-start;
+      }
+      .cb-header__notice-wrap {
+        align-items: flex-start;
+      }
+      .toggle-btn {
+        width: 96px;
+        height: 38px;
+      }
+      .rewards-banner__tip-badge {
+        white-space: nowrap;
+        font-size: 13px;
+        padding: 5px 18px 5px 30px;
+      }
+      .rewards-banner__txt-main,
+      .rewards-banner__txt-sub { text-align: center; }
+      .rewards-banner__txt-main { font-size: 22px; }
+      .rewards-banner__txt-main .t-dark { font-size: 20px; }
+
+      /* OTP 발급 방법 버튼 — 모바일 1줄 유지 */
+      .step-center__btn {
+        gap: 8px;
+        padding: 6px 14px;
+        font-size: 13px;
+        white-space: nowrap;
+      }
+      .step-center__btn > span {
+        white-space: nowrap;
+      }
+      /* STEP / REWARDS 탭 네비 — 모바일 1줄 유지 */
+      .step-tab-btn,
+      .rewards-tab-btn {
+        font-size: 14px;
+        height: 56px;
+        padding: 0 8px;
+        white-space: nowrap;
+        word-break: keep-all;
+        letter-spacing: -0.3px;
+      }
+      
+
+
+      /* 모바일 최소 사이즈에서 줄바꿈 유틸 토글 */
+      .br-mobile { display: inline; }
+      .br-pc { display: none; }
+
+      /* 특별 보상 그룹명 — 모바일 1줄 유지 */
+      .bonus-group__name {
+        font-size: 15px;
+        white-space: nowrap;
+        word-break: keep-all;
+        letter-spacing: -0.3px;
+      }
+      /* 신규 참여 이벤트 카드 헤더 — 모바일 폰트 축소 */
+      .event-card__header,
+      .event-card__header--blue,
+      .event-card__header--orange {
+        font-size: 14px;
+      }
+
+      /* 경품 툴팁 — 모바일에서 카드 기준으로 앵커 변경해 화면 밖 잘림 방지 */
+      .prize-tooltip-wrap { position: static; }
+      .prize-tooltip {
+        top: 50%;
+        bottom: auto;
+        left: 12px;
+        right: 12px;
+        width: auto;
+        max-width: none;
+        transform: translateY(calc(-50% + 4px));
+      }
+      .prize-tooltip-wrap:hover .prize-tooltip,
+      .prize-tooltip-wrap:focus-visible .prize-tooltip {
+        transform: translateY(-50%);
+      }
+      .prize-tooltip::after { display: none; }
+
+      /* 로지텍 배너 — 모바일 최소 사이즈에서는 세로 스택으로 재구성 */
+      .logitech-banner {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 18px;
+        padding: 28px 16px 28px;
+        min-height: 0;
+      }
+      /* 시각적 순서: 로고(상단 중앙) → 텍스트(전체 폭) → 마우스 이미지(하단 중앙) */
+      .logitech-banner__brand {
+        order: 1;
+        position: static;       /* 1280px 구간의 absolute 해제해 flex 흐름으로 복귀 */
+        top: auto;
+        right: auto;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        align-self: stretch;
+        width: 100%;
+        padding: 0;
+      }
+      .logitech-banner__logo { height: 18px; }
+      .logitech-banner__content {
+        order: 2;
+        align-self: stretch;
+        width: 100%;
+        gap: 4px;
+      }
+      .logitech-banner__text-sub {
+        font-size: 18px;
+        line-height: 1.4;
+      }
+      .logitech-banner__text-main {
+        font-size: 22px;
+        line-height: 1.3;
+        word-break: keep-all;
+      }
+      .logitech-banner__media {
+        order: 3;
+        align-self: stretch;
+        width: 100%;
+        height: 72px;
+        margin: 0;
+        justify-content: center;
+      }
+      .logitech-banner__product {
+        height: 340%;
+        width: auto;
+        max-width: 100%;
+        transform: none;                /* 1280px 구간의 확대 해제 */
+        transform-origin: center center;
+        pointer-events: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════
+       HEADER
+  ════════════════════════════════ -->
+  <header class="cb-header" id="top">
+    <div class="cb-header__inner">
+      <div class="cb-header__notice-wrap">
+        <!-- PC방 토글 -->
+        <button class="toggle-btn" type="button" id="pcRoomToggle" data-state="off" aria-label="PC방 모드 토글">
+          <img class="toggle-btn__img" src="img/off=off.png" alt="PC방 모드 OFF" loading="lazy" />
+        </button>
+        <!-- [BACKEND] 공지 텍스트 동적 교체: header_notice_text -->
+        <p class="cb-header__notice">
+          본 이벤트는 <a href="https://picaplay.com/pcbang/main.do" target="_blank" rel="noopener noreferrer"><u>피카플레이 가맹 PC방</u></a> 또는 <b>개인PC에서</b> <a href="https://www.craftbox.co.kr/" target="_blank" rel="noopener noreferrer"><u>크래프트박스 설치</u></a> 후 참여 가능합니다.
+        </p>
+      </div>
+      <!-- [BACKEND] 공유하기 버튼 - share_url 교체 -->
+      <button class="btn-share" type="button" id="btnShare" aria-label="공유하기">
+        <img src="img/share_icon.svg" alt="share icon" />
+        <span>공유하기</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ═══════════════════════════════
+         KV SECTION
+    ════════════════════════════════ -->
+    <section class="kv-section" id="kv" aria-label="메인 비주얼">
+      <div class="kv-bg"></div>
+
+      <!-- 물 튀는 모션 (배경 캐릭터의 손/발/파도 스플래시 위치) -->
+      <div class="kv-splash-stage" aria-hidden="true">
+        <div class="kv-splash-point kv-splash-point--hand">
+          <span class="kv-drop d1"></span><span class="kv-drop d2"></span><span class="kv-drop d3"></span><span class="kv-drop d4"></span><span class="kv-drop d5"></span>
+        </div>
+        <div class="kv-splash-point kv-splash-point--foot">
+          <span class="kv-drop d1"></span><span class="kv-drop d2"></span><span class="kv-drop d3"></span><span class="kv-drop d4"></span><span class="kv-drop d5"></span>
+        </div>
+        <div class="kv-splash-point kv-splash-point--wave-left">
+          <span class="kv-drop d1"></span><span class="kv-drop d2"></span><span class="kv-drop d3"></span><span class="kv-drop d4"></span><span class="kv-drop d5"></span>
+        </div>
+        <div class="kv-splash-point kv-splash-point--wave-right">
+          <span class="kv-drop d1"></span><span class="kv-drop d2"></span><span class="kv-drop d3"></span><span class="kv-drop d4"></span><span class="kv-drop d5"></span>
+        </div>
+      </div>
+
+      <div class="kv-content">
+        <!-- 타이틀 이미지 -->
+        <div class="kv-title-image">
+          <img src="img/title_img.png" alt="KV 타이틀" />
+        </div>
+        <div class="kv-main-btn">
+          <a href="#step02" aria-label="랭킹전 참여 방법으로 이동" onclick="event.preventDefault();document.getElementById('step02').scrollIntoView({behavior:'smooth',block:'center'});">
+            <img src="img/MAIN_BTN_BG.png" alt="메인 버튼" />
+          </a>
+        </div>
+        <p class="kv-mobile-period">이벤트 기간
+2026. 06. 01(월) - 2026. 06. 30(화)</p>
+      </div>
+    </section>
+    <!-- ═══════════════════════════════
+         HOW TO JOIN
+    ════════════════════════════════ -->
+    <section class="how-to-join" id="how-to-join" aria-label="랭킹전 참여방법">
+      <div class="container">
+        <!-- 타이틀 -->
+        <div class="htj-title fade-up">
+          <img class="htj-title__img" src="img/title.png" alt="HOW TO JOIN" />
+        </div>
+
+        <!-- STEP 01 -->
+        <div class="step-box fade-up" style="transition-delay:0.1s;">
+          <div class="step-box__header">
+            <span class="step-box__header-label">STEP 01</span>
+          </div>
+          <div class="step-box__body">
+            <div class="step-box__panel">
+              <div class="step-center">
+                <h3 class="step-center__title">OTP 코드 발급하기!</h3>
+                <p class="step-center__sub">스팀 또는 카카오 배틀그라운드에 접속해서 OTP 코드를 확인해주세요.</p>
+                <!-- [BACKEND] OTP 발급 방법 링크: otp_guide_url -->
+                <a href="https://blog.naver.com/playcraftbox/224105065552" target="_blank" rel="noopener noreferrer" class="step-center__btn" aria-label="OTP 코드 발급 방법 자세히 보기">
+                  <span>OTP 코드 발급 방법</span>
+                  <span>자세히 보기 ↗</span>
+                </a>
+              </div>
+              <!-- 3단 카드 -->
+              <div class="step-cards">
+                <div class="step-card-wrap">
+                  <div class="step-card">
+                    <div class="step-card__img-wrap">
+                      <!-- [BACKEND] 이미지 경로: step1_screenshot_1 -->
+                      <img class="step-card__img" src="img/step1_login_screen.png" alt="배틀그라운드 로그인 화면" loading="lazy" />
+                    </div>
+                    <div class="step-card__num-wrap">
+                      <div class="step-card__num">1</div>
+                      <p class="step-card__desc">배틀그라운드 로그인 및 실행</p>
+                    </div>
+                  </div>
+                  <span class="step-arrow" aria-hidden="true">›</span>
+                </div>
+                <div class="step-card-wrap">
+                  <div class="step-card">
+                    <div class="step-card__img-wrap">
+                      <!-- [BACKEND] 이미지 경로: step1_screenshot_2 -->
+                      <img class="step-card__img" src="img/img_STEP_02.png" alt="상단 메뉴 메모리 아이콘" loading="lazy" />
+                    </div>
+                    <div class="step-card__num-wrap">
+                      <div class="step-card__num">2</div>
+                      <p class="step-card__desc">우측 상단 메뉴 메모리 아이콘 클릭</p>
+                    </div>
+                  </div>
+                  <span class="step-arrow" aria-hidden="true">›</span>
+                </div>
+                <div class="step-card-wrap">
+                  <div class="step-card">
+                    <div class="step-card__img-wrap">
+                      <!-- [BACKEND] 이미지 경로: step1_screenshot_3 -->
+                      <img class="step-card__img" src="img/img_STEP_03.png" alt="이벤트 센터 OTP 생성" loading="lazy" />
+                    </div>
+                    <div class="step-card__num-wrap">
+                      <div class="step-card__num">3</div>
+                      <p class="step-card__desc">이벤트 센터 → [OTP 생성] 클릭</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 02 -->
+        <div class="step-box step-box--step02 fade-up" id="step02" style="transition-delay:0.2s;">
+          <div class="step-box__body" style="padding-top:0;">
+            <!-- STEP 02 헤더 -->
+            <div class="step-box__header" style="margin-bottom:0;">
+              <span class="step-box__header-label">STEP 02</span>
+            </div>
+            <div class="step-box__panel">
+              <div class="step-center">
+                <h3 class="step-center__title">랭킹전 참여 신청!</h3>
+                <p class="step-center__sub">PC방 또는 개인 PC에서 크래프트박스 설치 후 랭킹전에 참여하실 수 있습니다.</p>
+              </div>
+              <!-- 탭 네비 -->
+              <div class="step-tab-nav">
+                <button class="step-tab-btn is-active" id="tabPcRoom" onclick="switchStepTab('pcroom')" aria-selected="true" role="tab">
+                  PC방에서 참여방법
+                </button>
+                <button class="step-tab-btn is-inactive" id="tabPersonal" onclick="switchStepTab('personal')" aria-selected="false" role="tab">
+                  개인 PC에서 참여방법
+                </button>
+              </div>
+              <!-- PC방 탭 콘텐츠 -->
+              <div class="step-tab-content is-active" id="contentPcRoom" role="tabpanel">
+                
+                <div class="step-tab-cards-box">
+                  <div style="text-align:center;">
+                    <span class="badge-pc">PC방 플레이한 기록 : 랭킹전 지표 <span class="t-red">&nbsp;100% 반영</span></span>
+                  </div>
+                  <div class="step-cards">
+                    <div class="step-card-wrap">
+                      <div class="step-card">
+                        <div class="step-card__img-wrap">
+                          <!-- [BACKEND] 이미지: step2_pc_screenshot_1 -->
+                          <img class="step-card__img" src="img/img_STEP2_01.png" alt="PC방 바탕화면 버튼" loading="lazy" />
+                        </div>
+                        <div class="step-card__num-wrap">
+                          <div class="step-card__num">1</div>
+                          <p class="step-card__desc">PC방 바탕화면 상단<br class="br-mobile" /> <b>[배그 랭킹전]</b><br class="br-pc" />버튼 클릭</p>
+                          
+                        </div>
+                      </div>
+                      <span class="step-arrow" aria-hidden="true">›</span>
+                    </div>
+                    <div class="step-card-wrap">
+                      <div class="step-card">
+                        <div class="step-card__img-wrap">
+                          <!-- [BACKEND] 이미지: step2_pc_screenshot_2 -->
+                          <img class="step-card__img" src="img/img_01_step2_02.png" alt="랭킹전 참가하기" loading="lazy" />
+                        </div>
+                        <div class="step-card__num-wrap">
+                          <div class="step-card__num">2</div>
+                          <p class="step-card__desc">배틀그라운드 랭킹전 메뉴에서<br /><b>[랭킹전 참가하기]</b> 클릭</p>
+                        </div>
+                      </div>
+                      <span class="step-arrow" aria-hidden="true">›</span>
+                    </div>
+                    <div class="step-card-wrap">
+                      <div class="step-card">
+                        <div class="step-card__img-wrap">
+                          <!-- [BACKEND] 이미지: step2_pc_screenshot_3 -->
+                          <img class="step-card__img" src="img/img_STEP_03.png" alt="OTP 코드 입력" loading="lazy" />
+                        </div>
+                        <div class="step-card__num-wrap">
+                          <div class="step-card__num">3</div>
+                          <p class="step-card__desc">인게임에서 발급받은 OTP 코드 입력하여 연동 후 게임 플레이</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- 개인 PC 탭 콘텐츠 -->
+              <div class="step-tab-content" id="contentPersonal" role="tabpanel">
+                
+                <div class="step-tab-cards-box">
+                  <div style="text-align:center;">
+                    <span class="badge-pc">개인PC 플레이한 기록 : 랭킹전 지표 <span class="t-red">&nbsp;50% 반영</span></span>
+                  </div>
+                  <div class="step-cards">
+                    <div class="step-card-wrap">
+                      <div class="step-card">
+                        <div class="step-card__img-wrap">
+                          <img class="step-card__img" src="img/img_01_step2_TAP2_01.png" alt="크래프트박스 설치" loading="lazy" />
+                        </div>
+                        <div class="step-card__num-wrap">
+                          <div class="step-card__num">1</div>
+                          <p class="step-card__desc"><a href="https://www.craftbox.co.kr/" target="_blank" rel="noopener noreferrer" class="step-card__link">크래프트박스 설치</a> 후<br class="br-mobile" /> <b>[배그 랭킹전]</b> 접속</p>
+                        </div>
+                      </div>
+                      <span class="step-arrow" aria-hidden="true">›</span>
+                    </div>
+                    <div class="step-card-wrap">
+                      <div class="step-card">
+                        <div class="step-card__img-wrap">
+                          <img class="step-card__img" src="img/img_01_step2_02.png" alt="랭킹전 참가하기" loading="lazy" />
+                        </div>
+                        <div class="step-card__num-wrap">
+                          <div class="step-card__num">2</div>
+                          <p class="step-card__desc">배틀그라운드 랭킹전 메뉴에서<br /><b>[랭킹전 참가하기]</b> 클릭</p>
+                        </div>
+                      </div>
+                      <span class="step-arrow" aria-hidden="true">›</span>
+                    </div>
+                    <div class="step-card-wrap">
+                      <div class="step-card">
+                        <div class="step-card__img-wrap">
+                          <img class="step-card__img" src="img/img_STEP_03.png" alt="OTP 코드 입력" loading="lazy" />
+                        </div>
+                        <div class="step-card__num-wrap">
+                          <div class="step-card__num">3</div>
+                          <p class="step-card__desc">인게임에서 발급받은 OTP 코드 입력하여 연동 후 게임 플레이</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- 주의사항 -->
+              <div class="notice-badge">
+                ※ 배틀그라운드 랭킹전 메뉴 접속이 불가한 경우, 매장 사장님 <b>크래프트박스(피카)</b> <b>최신 버전 업데이트</b>를 요청해 주세요.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════
+         REWARDS 수정 란 공백
+    ════════════════════════════════ -->
+    <section class="rewards-section" id="rewards" aria-labelledby="rewards-heading">
+      <div class="container">
+        <!-- 타이틀 -->
+        <div class="rewards-title">
+          <img class="rewards-title__img" src="img/02_rewards_title.png" alt="CBL: PUBG 시즌1 경품 안내" />
+          <p class="ssn-desc">2주마다 새로운 시즌이 시작되며 순위가 초기화되고, <strong>상위 1,000명에게 보상이 지급됩니다.
+</strong></p>
+        </div>
+
+        <!-- 썸머 버닝 시즌 개요 -->
+        <div class="summer-season fade-up" style="transition-delay:0.05s;">
+
+          <!-- 헤더: 타이틀 + 설명 + 시즌 날짜 박스 -->
+          <div class="ssn-header">
+         
+            <img class="ssn-season-tag" src="img/small_title.png" alt="썸머 버닝 시즌" />
+            <div class="ssn-season-row">
+              <div class="ssn-box" data-season-start="2026-07-15" data-season-end="2026-07-28">
+                <span class="ssn-box__season-label">SEASON 3</span>
+                <p class="ssn-box__topic">누적 생존 시간</p>
+                <div class="ssn-box__divider"></div>
+                <p class="ssn-box__date">07.15(수) ~ 07.28(화)</p>
+              </div>
+              <div class="ssn-box" data-season-start="2026-07-29" data-season-end="2026-08-11">
+                <span class="ssn-box__season-label">SEASON 4</span>
+                <p class="ssn-box__topic">누적 킬 수</p>
+                <div class="ssn-box__divider"></div>
+                <p class="ssn-box__date">07.29(수) ~ 08.11(화)</p>
+              </div>
+              <div class="ssn-box" data-season-start="2026-08-12" data-season-end="2026-08-25">
+                <span class="ssn-box__season-label">SEASON 5</span>
+                <p class="ssn-box__topic">누적 치킨 횟수</p>
+                <div class="ssn-box__divider"></div>
+                <p class="ssn-box__date">08.12(수) ~ 08.25(화)</p>
+              </div>
+              <div class="ssn-box" data-season-start="2026-08-26" data-season-end="2026-09-08">
+                <span class="ssn-box__season-label">SEASON 6</span>
+                <p class="ssn-box__topic">누적 피해량</p>
+                <div class="ssn-box__divider"></div>
+                <p class="ssn-box__date">08.26(수) ~ 09.08(화)</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 그랜드 프라이즈 -->
+          <div class="ssn-grand-prize">
+            <canvas class="ssn-grand-prize__particles" aria-hidden="true"></canvas>
+            <div class="ssn-grand-prize__glow"></div>
+           
+            <p class="ssn-grand-prize__eyebrow">GRAND PRIZE</p>
+            <div>
+              <span class="ssn-grand-prize__condition">전체 시즌 상위 랭커 1명</span>
+            </div>
+
+            <div class="ssn-grand-prize__amount">
+              <span class="ssn-grand-prize__num">1,000,000</span>
+              <img class="ssn-grand-prize__coin" src="img/mcoin.png" alt="미션 마일리지 코인" loading="lazy" />
+            </div>
+            <div class="ssn-grand-prize__tear-line"></div>
+            <p class="ssn-grand-prize__desc">
+              <span class="ssn-grand-prize__desc-line">※  4개 시즌 전체 5위권 내 랭크 기록이 가장 많은 유저 지급</span>
+              <span class="ssn-grand-prize__desc-line">※  동일 횟수 기록자가 발생할 경우, 5위권 내 랭크 순위 합산 점수가 가장 낮은 유저가 우선 선정</span>
+            </p>
+          </div>
+
+        </div>
+
+        <!-- 경품 탭 -->
+        <div class="fade-up" style="transition-delay:0.1s;">
+          <div class="rewards-section-label">개인 랭킹전 보상</div>
+
+          <!-- 개인 랭킹전 보상 -->
+          <div id="rewardPersonal">
+            <div class="rewards-tab-desc">
+              <img class="rewards-tab-desc__divider" src="img/line.png" alt="" aria-hidden="true" loading="lazy" />
+              <p class="rewards-description"> <span style="color: #FFAE00;">시즌 별 집계 기준</span>에 따라 상위 순위가 결정됩니다.</p>
+              <p class="rewards-note">* 어뷰징으로 판단되는 매치는 집계 대상에서 제외 될 수 있습니다.</p>
+            </div>
+            <!-- [LOOP START] 경품 포디움 - prize_personal_list 배열 반복 -->
+            <div class="prize-podium">
+              <!-- 2등 -->
+              <div class="prize-podium__item prize-podium__item--2nd">
+                <div class="prize-podium__medal">2</div>
+                <p class="prize-podium__label">2등</p>
+                <div class="prize-podium__img-wrap">
+                  <!-- [BACKEND] 경품 이미지: prize_2nd_gift_img -->
+                  <img class="prize-podium__gift-img" src="img/2RD_GIFT.png" alt="2등 경품" loading="lazy" />
+                </div>
+                <div class="prize-podium__amounts">
+                  <span class="prize-podium__amt prize-podium__amt--m"><img class="prize-podium__coin" src="img/mileage_coin.png" alt="마일리지" loading="lazy" />30,000</span>
+                  <span class="prize-podium__amt prize-podium__amt--g"><img class="prize-podium__coin" src="img/img_coin_g.png" alt="쿠폰" loading="lazy" />3,000</span>
+                </div>
+              </div>
+              <!-- 1등 -->
+              <div class="prize-podium__item prize-podium__item--1st">
+                <p class="prize-podium__crown">👑</p>
+                <div class="prize-podium__medal">1</div>
+                <p class="prize-podium__label">1등</p>
+                <div class="prize-podium__img-wrap">
+                  <!-- [BACKEND] 경품 이미지: prize_1st_gift_img -->
+                  <img class="prize-podium__gift-img" src="img/1RD_GIFT.png" alt="1등 경품" loading="lazy" />
+                </div>
+                <div class="prize-podium__amounts">
+                  <span class="prize-podium__amt prize-podium__amt--m prize-podium__amt--big"><img class="prize-podium__coin" src="img/mileage_coin.png" alt="마일리지" loading="lazy" />50,000</span>
+                  <span class="prize-podium__amt prize-podium__amt--g prize-podium__amt--big"><img class="prize-podium__coin" src="img/img_coin_g.png" alt="쿠폰" loading="lazy" />5,000</span>
+                </div>
+              </div>
+              <!-- 3등 -->
+              <div class="prize-podium__item prize-podium__item--3rd">
+                <div class="prize-podium__medal">3</div>
+                <p class="prize-podium__label">3등</p>
+                <div class="prize-podium__img-wrap">
+                  <!-- [BACKEND] 경품 이미지: prize_3rd_gift_img -->
+                  <img class="prize-podium__gift-img" src="img/3RD_GIFT.png" alt="3등 경품" loading="lazy" />
+                </div>
+                <div class="prize-podium__amounts">
+                  <span class="prize-podium__amt prize-podium__amt--m"><img class="prize-podium__coin" src="img/mileage_coin.png" alt="마일리지" loading="lazy" />10,000</span>
+                  <span class="prize-podium__amt prize-podium__amt--g"><img class="prize-podium__coin" src="img/img_coin_g.png" alt="쿠폰" loading="lazy" />1,000</span>
+                </div>
+              </div>
+            </div>
+            <!-- [LOOP END] 경품 포디움 -->
+
+            <!-- 하위 보상 테이블 -->
+            <!-- [LOOP START] 하위 보상 테이블 - sub_prize_list 배열 반복 -->
+            <div class="reward-table">
+              <div class="reward-table__head" role="row">
+                <div>순위</div>
+                <div>보상</div>
+              </div>
+              <div class="reward-table__body">
+                <div class="reward-table__row">
+                  <div class="reward-table__rank">4~10등</div>
+                  <div class="reward-table__amount">
+                    <span class="reward-table__pair"><img class="reward-table__coin" src="img/mileage_coin.png" alt="마일리지" loading="lazy" />5,000</span>
+                    <span class="reward-table__plus">+</span>
+                    <span class="reward-table__pair"><img class="reward-table__coin" src="img/img_coin_g.png" alt="쿠폰" loading="lazy" />500</span>
+                  </div>
+                </div>
+                <div class="reward-table__row">
+                  <div class="reward-table__rank">11~50등</div>
+                  <div class="reward-table__amount">
+                    <span class="reward-table__pair"><img class="reward-table__coin" src="img/mileage_coin.png" alt="마일리지" loading="lazy" />3,000</span>
+                    <span class="reward-table__plus">+</span>
+                    <span class="reward-table__pair"><img class="reward-table__coin" src="img/img_coin_g.png" alt="쿠폰" loading="lazy" />300</span>
+                  </div>
+                </div>
+                <div class="reward-table__row">
+                  <div class="reward-table__rank">51~300등</div>
+                  <div class="reward-table__amount">
+                    <span class="reward-table__pair"><img class="reward-table__coin" src="img/mileage_coin.png" alt="마일리지" loading="lazy" />1,000</span>
+                    <span class="reward-table__plus">+</span>
+                    <span class="reward-table__pair"><img class="reward-table__coin" src="img/img_coin_g.png" alt="쿠폰" loading="lazy" />200</span>
+                  </div>
+                </div>
+                <div class="reward-table__row">
+                  <div class="reward-table__rank">301~1000등</div>
+                  <div class="reward-table__amount">
+                    <span class="reward-table__pair"><img class="reward-table__coin" src="img/mileage_coin.png" alt="마일리지" loading="lazy" />100</span>
+                    <span class="reward-table__plus">+</span>
+                    <span class="reward-table__pair"><img class="reward-table__coin" src="img/img_coin_g.png" alt="쿠폰" loading="lazy" />100</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- [LOOP END] 하위 보상 테이블 -->
+            <ul class="reward-table-note">
+              <li>※ 지급받은 G-COIN 의 사용 기한은 지급일로 부터 14일 입니다.</li>
+              <li>※ 지급받은 마일리지의 사용 기한은 지급일로 부터 90일 입니다.</li>
+            </ul>
+          </div>
+
+        </div>
+   <!-- 랭킹전 TIP 배너 -->
+        <div class="rewards-banner fade-up">
+          <div class="rewards-banner__bg"></div>
+          <div class="rewards-banner__content">
+            <div class="rewards-banner__tip">
+              <span class="rewards-banner__tip-badge">랭킹전 참여 TIP!</span>
+            </div>
+            <div class="rewards-banner__txt">
+              <!-- [BACKEND] 배너 메인 텍스트: tip_banner_main_text -->
+              <p class="rewards-banner__txt-main">PUBG 도전과제 달성 시 <span class="t-dark">최대 5만 마일리지</span> 추가 획득!</p>
+              <p class="rewards-banner__txt-sub">크래프트박스 내 혜택박스 → 도전과제 탭에서 배틀그라운드 도전과제를 완료하고 열쇠로 랜덤 마일리지를 획득하세요!</p>
+            </div>
+          </div>
+          <div class="rewards-banner__media">
+            <!-- [BACKEND] 배너 아이템 이미지: rewards_banner_item_img -->
+            <img class="rewards-banner__item-img" src="img/cbox_key.png" alt="경품 아이템" loading="lazy" />
+          </div>
+        </div>
+        <img class="rewards-section__divider" src="img/line.png" alt="" aria-hidden="true" loading="lazy" />
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════
+       공유하기 모달
+  ════════════════════════════════ -->
+  <div id="shareModal" class="share-modal" role="dialog" aria-modal="true" aria-labelledby="shareModalTitle" aria-hidden="true">
+    <div class="share-modal__dialog" role="document">
+      <button type="button" class="share-modal__close" id="shareModalClose" aria-label="닫기">&times;</button>
+      <h2 id="shareModalTitle" class="share-modal__title">공유하기</h2>
+      <div class="share-modal__grid">
+        <button type="button" class="share-item share-item--kakao" data-share="kakao" aria-label="카카오톡으로 공유">
+          <span class="share-item__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.48 3 2 6.58 2 11c0 2.83 1.86 5.32 4.66 6.73L5.5 21.5l4.2-2.47c.76.11 1.54.17 2.3.17 5.52 0 10-3.58 10-8S17.52 3 12 3z"/></svg>
+          </span>
+          <span class="share-item__label">카카오톡</span>
+        </button>
+        <button type="button" class="share-item share-item--facebook" data-share="facebook" aria-label="페이스북으로 공유">
+          <span class="share-item__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.5-.1-2.4 0-4.1 1.5-4.1 4.2v2.3H7.5v3.1h2.6V21h3.4z"/></svg>
+          </span>
+          <span class="share-item__label">페이스북</span>
+        </button>
+        <button type="button" class="share-item share-item--twitter" data-share="twitter" aria-label="트위터(X)로 공유">
+          <span class="share-item__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.451-6.231zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
+          </span>
+          <span class="share-item__label">트위터</span>
+        </button>
+        <button type="button" class="share-item share-item--naver" data-share="naver" aria-label="네이버 블로그로 공유">
+          <span class="share-item__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.91 12.03 9.94 6H6v12h4.09v-6.03L14.06 18H18V6h-4.09z"/></svg>
+          </span>
+          <span class="share-item__label">네이버블로그</span>
+        </button>
+        <button type="button" class="share-item share-item--instagram" data-share="instagram" aria-label="인스타그램 공유용 URL 복사">
+          <span class="share-item__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </span>
+          <span class="share-item__label">인스타그램</span>
+        </button>
+        <button type="button" class="share-item share-item--copy" data-share="copy" aria-label="URL 복사">
+          <span class="share-item__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          </span>
+          <span class="share-item__label">URL 복사</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="copyToast" class="copy-toast" role="status" aria-live="polite">클립보드에 복사되었습니다.</div>
+  <div class="mobile-fab" aria-label="모바일 플로팅 버튼">
+    <button class="mobile-fab__btn" type="button" id="btnShareFloating" aria-label="공유하기">
+      <img src="img/share_icon.svg" alt="" aria-hidden="true" loading="lazy" />
+    </button>
+    <button class="mobile-fab__btn mobile-fab__btn--top" type="button" id="btnTopFloating" aria-label="페이지 맨 위로 이동">↑</button>
+  </div>
+
+  <!-- ═══════════════════════════════
+       FOOTER
+  ════════════════════════════════ -->
+  <footer class="cb-footer" id="footer" aria-labelledby="footer-heading">
+    <div class="container">
+      <h2 id="footer-heading" class="footer-title">유의사항</h2>
+      <!-- [BACKEND] 유의사항 목록 동적 교체: notice_list 배열 -->
+      <ul class="footer-list">
+        <li>배틀그라운드 랭킹전은 최신 버전 PC방 또는 개인 PC 크래프트박스에서 이용 가능합니다.
+          <p class="indent">→ PC방에서 배틀그라운드 랭킹전 메뉴 접속이 불가한 경우, 매장 사장님께 크래프트박스(피카) 최신 버전 업데이트를 요청해 주세요.</p>
+        </li>
+        <li>배틀그라운드 계정 연동은 최초 1회만 진행되며, 시즌 중간에는 연동 된 배틀그라운드의 계정 변경이 불가합니다.</li>
+        <li>배틀그라운드 랭킹전은 스팀/카카오 배틀그라운드 접속 시에만 이용 가능하며, 스팀 배틀그라운드의 경우 아시아 서버의 게임 플레이만 집계됩니다.</li>
+        <li>소속팀은 피카플레이 계정과 연동된 PC방에 한 해 선택 가능하며, 참가 신청 후 선택한 PC방 소속팀은 리그 운영 기간 동안 유지됩니다.</li>
+        <li>리그 순위 마일리지 및 G-COIN(사용 기한은 14일) 보상은 각 시즌 종료일로부터 2주 이내에 순차 지급됩니다.</li>
+        <li>순위는 최종 데이터의 검증 결과에 따라 일부 변동이 발생할 수 있습니다.</li>
+        <li>계정 연동 및 참가 신청이 완료된 피카플레이 계정으로 크래프트박스 로그인 및 실행 상태에서 배틀그라운드 플레이 시 경기 결과가 자동 집계 됩니다.
+          <p class="indent">* 어뷰징으로 판단되는 플레이 기록은 집계 대상에서 제외 될 수있습니다.</p>
+        </li>
+        <li>간혹 배틀그라운드(PUBG) 서버 상태 혹은 PC 환경에 따라 일부 플레이 기록이 누락될 수 있으며, 해당 내역은 수동 반영이 어려운 점 양해 부탁드립니다.</li>
+        <li>이벤트 종료 후 개별 SMS를 통해 안내가 발송되며, 크래프트박스 공식 블로그를 통해 공지됩니다.
+          <!-- [BACKEND] 블로그 링크: official_blog_url -->
+          <a href="https://blog.naver.com/playcraftbox" target="_blank" rel="noopener noreferrer">[바로가기]</a>
+        </li>
+        <li><strong>랭킹전 GRAND PRIZE(100만 마일리지)의 선정 기준은 다음과 같습니다.</strong>
+          <p class="indent">* 4개 시즌 전체 5위권 내 랭크 기록이 가장 많은 유저에게 지급된다.</p>
+          <p class="indent">* 동일 횟수 기록자가 발생할 경우, 5위권 내 랭크 순위 합산 점수가 가장 낮은 유저가 우선 선정</p>
+          <p class="indent">* 순위 합산 점수까지 동일할 경우 추첨을 통해 지급</p>
+          <p class="indent">* 예시: A 유저가 1위, 5위, 5위를 기록하고 B 유저가 2위, 2위, 2위를 기록한 경우, A 유저의 합산 점수는 11점, B 유저의 합산 점수는 6점이므로 B 유저가 우선 선정됩니다.</p>
+        </li>
+        <li>㈜미디어웹은 마일리지 지급을 위해 개인정보를 수집할 수 있으며,「5만원 초과 경품」수령자에 한하여 제세공과금 신고를 위해 신분증 사본(또는 주민등록 등본 등) 제출을 요청할 수 있습니다.
+          <p class="indent">* 제세공과금은 당첨자 본인이 부담하며, 기한 내 서류 제출 및 납부가 완료되지 않을 경우 당첨 대상자에서 제외될 수 있습니다.</p>
+        </li>
+        <li>모든 보상 지급 및 안내는 피카플레이(크래프트박스) 회원 계정에 등록된 휴대폰 번호를 기준으로 진행됩니다.
+          <p class="indent">* 피카플레이 계정에 등록된 휴대폰 번호가 부정확하거나 실제 사용 중인 번호와 상이하여 연락이 불가한 경우, 당첨 대상에서 제외 될 수 있습니다.</p>
+        </li>
+        <li>본 이벤트는 당사 사정에 따라 조기 종료 또는 연장 될 수 있습니다.</li>
+        <li>지급 받은 마일리지는 크래프트박스 마이페이지 또는 피카플레이앱 마이페이지에서 확인 가능합니다.</li>
+        <li>지급 받은 마일리지는 획득 일로부터 90일의 유효기간이 있으며, 기간 경과 시 자동 소멸 됩니다.</li>
+        <li>본 이벤트 관련 문의는 피카플레이 또는 크래프트박스 1:1 문의를 통해 문의 부탁드립니다.</li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    // ── PC방 토글 이미지 상태 (백엔드 연동용) ──
+    function setPcRoomToggleState(isPcRoom) {
+      var toggleBtn = document.getElementById('pcRoomToggle');
+      if (!toggleBtn) { return; }
+      var toggleImg = toggleBtn.querySelector('.toggle-btn__img');
+      if (!toggleImg) { return; }
+      var isOn = Boolean(isPcRoom);
+      toggleBtn.dataset.state = isOn ? 'on' : 'off';
+      toggleImg.src = isOn ? 'img/off=on.png' : 'img/off=off.png';
+      toggleImg.alt = isOn ? 'PC방 모드 ON' : 'PC방 모드 OFF';
+    }
+
+    // 기본값 OFF (백엔드에서 접속 상태 확인 후 setPcRoomToggleState 호출)
+    setPcRoomToggleState(false);
+
+    // ── 탭 전환: STEP 02 ──
+    function switchStepTab(type) {
+      const btnPcRoom   = document.getElementById('tabPcRoom');
+      const btnPersonal = document.getElementById('tabPersonal');
+      const contPcRoom  = document.getElementById('contentPcRoom');
+      const contPersonal= document.getElementById('contentPersonal');
+      if (type === 'pcroom') {
+        btnPcRoom.classList.replace('is-inactive', 'is-active');
+        btnPersonal.classList.replace('is-active', 'is-inactive');
+        btnPcRoom.setAttribute('aria-selected', 'true');
+        btnPersonal.setAttribute('aria-selected', 'false');
+        contPcRoom.classList.add('is-active');
+        contPersonal.classList.remove('is-active');
+      } else {
+        btnPersonal.classList.replace('is-inactive', 'is-active');
+        btnPcRoom.classList.replace('is-active', 'is-inactive');
+        btnPersonal.setAttribute('aria-selected', 'true');
+        btnPcRoom.setAttribute('aria-selected', 'false');
+        contPersonal.classList.add('is-active');
+        contPcRoom.classList.remove('is-active');
+      }
+    }
+
+    // ── 탭 전환: 경품 ──
+    function switchRewardTab(type) {
+      const btnPersonal = document.getElementById('tabPersonalReward');
+      const btnTeam     = document.getElementById('tabTeamReward');
+      const contPersonal= document.getElementById('rewardPersonal');
+      const contTeam    = document.getElementById('rewardTeam');
+      const specialBonus = document.getElementById('rewardsSpecialBonus');
+      if (type === 'personal') {
+        btnPersonal.classList.replace('is-inactive', 'is-active');
+        btnTeam.classList.replace('is-active', 'is-inactive');
+        btnPersonal.setAttribute('aria-selected', 'true');
+        btnTeam.setAttribute('aria-selected', 'false');
+        contPersonal.classList.add('is-active');
+        contTeam.classList.remove('is-active');
+        if (specialBonus) {
+          specialBonus.classList.remove('special-bonus--hidden-by-tab');
+          specialBonus.removeAttribute('aria-hidden');
+        }
+      } else {
+        btnTeam.classList.replace('is-inactive', 'is-active');
+        btnPersonal.classList.replace('is-active', 'is-inactive');
+        btnTeam.setAttribute('aria-selected', 'true');
+        btnPersonal.setAttribute('aria-selected', 'false');
+        contTeam.classList.add('is-active');
+        contPersonal.classList.remove('is-active');
+        if (specialBonus) {
+          specialBonus.classList.add('special-bonus--hidden-by-tab');
+          specialBonus.setAttribute('aria-hidden', 'true');
+        }
+      }
+    }
+
+    // ── TOP 버튼 ──
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // ── 공유하기: 설정 / 토스트 / 모달 / SNS 핸들러 ──
+    // [BACKEND] 배포 시 아래 3개 값만 교체하세요.
+    var SHARE_CONFIG = {
+      title: '크래프트박스 리그: PUBG | 2026 S3~6 배그 썸머 챌린지',
+      description: '2주마다 새롭게 펼쳐지는 썸머 랭킹 경쟁!',
+      kakaoKey: 'd1c0c39f4dbac0062bf36527a3021357',                      // Kakao Developers JavaScript 키
+      ogImage:  'https://ics.mediaweb.co.kr/_event/20260715_CBL_PUBGS3-6/img/Thumbnail_1200x630.jpg'   // 공유 썸네일 절대 URL (권장 1200x630)
+    };
+
+    var copyToast = document.getElementById('copyToast');
+    var copyToastTimer = null;
+    var DEFAULT_TOAST_MSG = '클립보드에 복사되었습니다.';
+    function showCopyToast(msg) {
+      if (!copyToast) { return; }
+      copyToast.textContent = msg || DEFAULT_TOAST_MSG;
+      copyToast.classList.add('is-visible');
+      if (copyToastTimer) { clearTimeout(copyToastTimer); }
+      copyToastTimer = setTimeout(function() {
+        copyToast.classList.remove('is-visible');
+      }, 2200);
+    }
+    function fallbackCopyText(text) {
+      var textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.select();
+      var copied = false;
+      try {
+        copied = document.execCommand('copy');
+      } catch (e) {}
+      document.body.removeChild(textarea);
+      return copied;
+    }
+    function copyUrlWithToast(url, toastMsg) {
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(url).then(function() {
+          showCopyToast(toastMsg);
+        }).catch(function() {
+          if (fallbackCopyText(url)) { showCopyToast(toastMsg); }
+        });
+      } else if (fallbackCopyText(url)) {
+        showCopyToast(toastMsg);
+      }
+    }
+
+    // Kakao SDK 초기화 (앱키가 placeholder이면 초기화하지 않음)
+    (function initKakao() {
+      if (!window.Kakao) { return; }
+      if (Kakao.isInitialized && Kakao.isInitialized()) { return; }
+      if (!SHARE_CONFIG.kakaoKey || SHARE_CONFIG.kakaoKey === 'YOUR_KAKAO_JS_KEY') { return; }
+      try { Kakao.init(SHARE_CONFIG.kakaoKey); } catch (e) {}
+    })();
+
+    // 공유 모달 열기/닫기
+    var shareModal = document.getElementById('shareModal');
+    var shareModalClose = document.getElementById('shareModalClose');
+    var lastShareTrigger = null;
+    function openShareModal(trigger) {
+      if (!shareModal) { return; }
+      lastShareTrigger = trigger || null;
+      shareModal.classList.add('is-open');
+      shareModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      if (shareModalClose) { shareModalClose.focus(); }
+    }
+    function closeShareModal() {
+      if (!shareModal) { return; }
+      shareModal.classList.remove('is-open');
+      shareModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      if (lastShareTrigger && lastShareTrigger.focus) { lastShareTrigger.focus(); }
+    }
+    if (shareModal) {
+      shareModal.addEventListener('click', function(e) {
+        if (e.target === shareModal) { closeShareModal(); }
+      });
+    }
+    if (shareModalClose) {
+      shareModalClose.addEventListener('click', closeShareModal);
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && shareModal && shareModal.classList.contains('is-open')) {
+        closeShareModal();
+      }
+    });
+
+    // SNS별 공유 동작
+    function openPopup(url) {
+      var w = 600, h = 600;
+      var left = (window.screen.width  - w) / 2;
+      var top  = (window.screen.height - h) / 2;
+      window.open(url, '_blank', 'width=' + w + ',height=' + h + ',left=' + left + ',top=' + top + ',noopener');
+    }
+    function shareFacebook() {
+      var u = encodeURIComponent(window.location.href);
+      openPopup('https://www.facebook.com/sharer/sharer.php?u=' + u);
+    }
+    function shareTwitter() {
+      var u = encodeURIComponent(window.location.href);
+      var t = encodeURIComponent(SHARE_CONFIG.title);
+      openPopup('https://twitter.com/intent/tweet?url=' + u + '&text=' + t);
+    }
+    function shareNaver() {
+      var u = encodeURIComponent(window.location.href);
+      var t = encodeURIComponent(SHARE_CONFIG.title);
+      openPopup('https://share.naver.com/web/shareView?url=' + u + '&title=' + t);
+    }
+    function shareKakao() {
+      // 앱키가 없거나 SDK 미로드 시 URL 복사 폴백
+      if (!window.Kakao || !Kakao.isInitialized || !Kakao.isInitialized() || !Kakao.Share) {
+        copyUrlWithToast(window.location.href, '카카오 앱키 미설정 — URL이 복사되었습니다.');
+        return;
+      }
+      try {
+        Kakao.Share.sendDefault({
+          objectType: 'feed',
+          content: {
+            title: SHARE_CONFIG.title,
+            description: SHARE_CONFIG.description,
+            imageUrl: SHARE_CONFIG.ogImage,
+            link: {
+              mobileWebUrl: window.location.href,
+              webUrl: window.location.href
+            }
+          },
+          buttons: [{
+            title: '자세히 보기',
+            link: {
+              mobileWebUrl: window.location.href,
+              webUrl: window.location.href
+            }
+          }]
+        });
+      } catch (e) {
+        copyUrlWithToast(window.location.href, 'URL이 복사되었습니다.');
+      }
+    }
+    function shareInstagram() {
+      // 인스타그램은 웹 URL 공유 API를 제공하지 않으므로 URL 복사 + 안내
+      copyUrlWithToast(window.location.href, 'URL이 복사되었습니다. 인스타그램에 붙여넣어 주세요.');
+    }
+    function shareCopy() {
+      copyUrlWithToast(window.location.href, '클립보드에 복사되었습니다.');
+    }
+    var SHARE_HANDLERS = {
+      kakao:     shareKakao,
+      facebook:  shareFacebook,
+      twitter:   shareTwitter,
+      naver:     shareNaver,
+      instagram: shareInstagram,
+      copy:      shareCopy
+    };
+    if (shareModal) {
+      shareModal.addEventListener('click', function(e) {
+        var target = e.target.closest ? e.target.closest('[data-share]') : null;
+        if (!target) { return; }
+        var type = target.getAttribute('data-share');
+        var handler = SHARE_HANDLERS[type];
+        if (typeof handler === 'function') {
+          handler();
+          // 카카오톡은 자체 팝업이 뜨므로 모달은 닫고, 나머지는 약간의 시각적 피드백 후 닫기
+          closeShareModal();
+        }
+      });
+    }
+
+    var btnShare = document.getElementById('btnShare');
+    if (btnShare) {
+      btnShare.addEventListener('click', function() { openShareModal(btnShare); });
+    }
+    var btnShareFloating = document.getElementById('btnShareFloating');
+    if (btnShareFloating) {
+      btnShareFloating.addEventListener('click', function() { openShareModal(btnShareFloating); });
+    }
+    var btnTopFloating = document.getElementById('btnTopFloating');
+    if (btnTopFloating) {
+      btnTopFloating.addEventListener('click', scrollToTop);
+    }
+
+    // ── 참여하기 버튼: STEP 02 영역으로 스크롤 ──
+    var btnJoin = document.getElementById('btnJoin');
+    if (btnJoin) {
+      btnJoin.addEventListener('click', function(e) {
+        var target = document.getElementById('step02');
+        if (target) {
+          e.preventDefault();
+          var offset = 80; // header height
+          var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top: top, behavior: 'smooth' });
+        }
+      });
+    }
+
+    // ── IntersectionObserver 페이드인 ──
+    var fadeEls = document.querySelectorAll('.fade-up');
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      fadeEls.forEach(function(el) { observer.observe(el); });
+    } else {
+      // 폴백: 즉시 표시
+      fadeEls.forEach(function(el) { el.classList.add('is-visible'); });
+    }
+
+    // ── 그랜드 프라이즈 파티클 (당첨 폭죽) ──
+    (function() {
+      var canvas = document.querySelector('.ssn-grand-prize__particles');
+      if (!canvas) return;
+      var ctx = canvas.getContext('2d');
+
+      function resize() {
+        var p = canvas.parentElement;
+        canvas.width  = p.offsetWidth;
+        canvas.height = p.offsetHeight;
+      }
+      resize();
+      window.addEventListener('resize', resize);
+
+      var COLORS = ['#ffae00', '#fcb800', '#ffd740', '#ffe57a',
+                    '#0957ff', '#4a90e2', '#ffffff', '#ff6b00', '#ffcc02'];
+      function rnd(a, b) { return a + Math.random() * (b - a); }
+      function pick() { return COLORS[0|rnd(0, COLORS.length)]; }
+
+      function mkConf() {
+        return { type:'conf', x:rnd(0,canvas.width), y:rnd(-canvas.height,0),
+          vx:rnd(-0.8,0.8), vy:rnd(1.2,2.8), w:rnd(5,10), h:rnd(10,18),
+          rot:rnd(0,6.28), rs:rnd(-0.06,0.06), col:pick(), op:rnd(0.25,0.55) };
+      }
+      function mkDot() {
+        return { type:'dot', x:rnd(0,canvas.width), y:rnd(-canvas.height,0),
+          vx:rnd(-0.5,0.5), vy:rnd(1.0,2.5), r:rnd(3,7),
+          phase:rnd(0,6.28), spd:rnd(0.02,0.05), col:pick(), op:rnd(0.2,0.45) };
+      }
+      function mkStar() {
+        return { type:'star', x:rnd(0,canvas.width), y:rnd(-canvas.height,0),
+          vx:rnd(-0.4,0.4), vy:rnd(0.8,2.0), r:rnd(4,9),
+          rot:rnd(0,6.28), rs:rnd(-0.04,0.04), col:pick(), op:rnd(0.22,0.5) };
+      }
+
+      var parts = [];
+      for (var i = 0; i < 25; i++) parts.push(mkConf());
+      for (var i = 0; i < 10; i++) parts.push(mkDot());
+      for (var i = 0; i < 8;  i++) parts.push(mkStar());
+
+      var bursts = [];
+      var nextBurst = rnd(600, 1400);
+      var lastTs = 0;
+
+      function spawnBurst() {
+        var bx = rnd(canvas.width * 0.1, canvas.width * 0.9);
+        var by = canvas.height * rnd(0.45, 0.8);
+        var bp = [];
+        var n = 22;
+        for (var i = 0; i < n; i++) {
+          var a = (i / n) * Math.PI * 2;
+          var s = rnd(2.5, 6.5);
+          bp.push({ vx: Math.cos(a)*s, vy: Math.sin(a)*s - rnd(1.5, 3.5),
+            col: pick(), r: rnd(2.5, 5.5),
+            shape: Math.random() < 0.45 ? 'rect' : 'dot',
+            w: rnd(3, 8), h: rnd(6, 15), rot: rnd(0, 6.28) });
+        }
+        bursts.push({ x:bx, y:by, born:lastTs, bp:bp });
+      }
+
+      function drawStarPath(r) {
+        ctx.beginPath();
+        for (var i = 0; i < 5; i++) {
+          var a = (i / 5) * Math.PI * 2 - Math.PI / 2;
+          var b = a + Math.PI / 5;
+          if (i === 0) ctx.moveTo(Math.cos(a)*r, Math.sin(a)*r);
+          else         ctx.lineTo(Math.cos(a)*r, Math.sin(a)*r);
+          ctx.lineTo(Math.cos(b)*r*.42, Math.sin(b)*r*.42);
+        }
+        ctx.closePath();
+      }
+
+      function tick(ts) {
+        var dt = ts - lastTs; lastTs = ts;
+        if (dt > 100) dt = 100;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        parts.forEach(function(p) {
+          if (p.type === 'conf') {
+            p.x += p.vx; p.y += p.vy; p.rot += p.rs;
+            if (p.y > canvas.height + 20) { Object.assign(p, mkConf()); p.y = -15; }
+            ctx.save(); ctx.globalAlpha = p.op;
+            ctx.translate(p.x, p.y); ctx.rotate(p.rot);
+            ctx.fillStyle = p.col; ctx.fillRect(-p.w/2, -p.h/2, p.w, p.h);
+            ctx.restore();
+          } else if (p.type === 'dot') {
+            p.phase += p.spd; p.x += p.vx + Math.sin(p.phase)*0.6; p.y += p.vy;
+            if (p.y > canvas.height + 20) { Object.assign(p, mkDot()); p.y = -15; }
+            ctx.save(); ctx.globalAlpha = p.op;
+            ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
+            ctx.fillStyle = p.col; ctx.fill();
+            ctx.restore();
+          } else {
+            p.x += p.vx; p.y += p.vy; p.rot += p.rs;
+            if (p.y > canvas.height + 20) { Object.assign(p, mkStar()); p.y = -15; }
+            ctx.save(); ctx.globalAlpha = p.op;
+            ctx.translate(p.x, p.y); ctx.rotate(p.rot);
+            drawStarPath(p.r);
+            ctx.fillStyle = p.col; ctx.fill();
+            ctx.restore();
+          }
+        });
+
+        nextBurst -= dt;
+        if (nextBurst <= 0) { spawnBurst(); nextBurst = rnd(1200, 2800); }
+
+        bursts = bursts.filter(function(b) {
+          var age = ts - b.born, life = 900;
+          if (age > life) return false;
+          var t = age / life;
+          b.bp.forEach(function(bp) {
+            var px = b.x + bp.vx * age * 0.04;
+            var py = b.y + bp.vy * age * 0.04 + 0.0003 * age * age;
+            ctx.save();
+            ctx.globalAlpha = (1 - t) * 0.7;
+            if (bp.shape === 'rect') {
+              ctx.translate(px, py); ctx.rotate(bp.rot + t * 3);
+              ctx.fillStyle = bp.col; ctx.fillRect(-bp.w/2, -bp.h/2, bp.w, bp.h);
+            } else {
+              ctx.beginPath(); ctx.arc(px, py, bp.r*(1-t*.4), 0, Math.PI*2);
+              ctx.fillStyle = bp.col; ctx.fill();
+            }
+            ctx.restore();
+          });
+          return true;
+        });
+
+        requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    })();
+
+    // ── 그랜드 프라이즈 숫자 카운트업 ──
+    (function() {
+      var el = document.querySelector('.ssn-grand-prize__num');
+      if (!el) return;
+      var from = 800000;
+      var target = 1000000;
+      var duration = 900;
+      var started = false;
+
+      function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
+      function fmt(n) { return Math.floor(n).toLocaleString('ko-KR'); }
+
+      function run() {
+        if (started) return;
+        started = true;
+        var startTs = null;
+        function frame(ts) {
+          if (!startTs) startTs = ts;
+          var t = Math.min((ts - startTs) / duration, 1);
+          el.textContent = fmt(from + (target - from) * easeOut(t));
+          if (t < 1) requestAnimationFrame(frame);
+        }
+        requestAnimationFrame(frame);
+      }
+
+      var obs = new IntersectionObserver(function(entries) {
+        if (entries[0].isIntersecting) { run(); obs.disconnect(); }
+      }, { threshold: 0.5 });
+      obs.observe(el);
+    })();
+
+    // ── 현재 시즌 박스 자동 활성화 ──
+    (function() {
+      var today = new Date();
+      today.setHours(0, 0, 0, 0);
+      document.querySelectorAll('.ssn-box[data-season-start]').forEach(function(box) {
+        var start = new Date(box.dataset.seasonStart);
+        var end   = new Date(box.dataset.seasonEnd);
+        end.setHours(23, 59, 59, 999);
+        if (today >= start && today <= end) {
+          box.classList.add('is-active');
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>
